@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 // Requiring passport as we've configured it
-var passport = require("./config/passport");
+// var passport = require("./config/passport");
 
 var app = express();
 var PORT = process.env.PORT || 3344;
