@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Event = sequelize.define("Event", {
+    var Occasion = sequelize.define("Occasion", {
       category: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -13,17 +13,17 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       date: {
-          type: DataTypes.DATEONLY,
+          type: DataTypes.STRING,
           allowNull: false,
           isDate: true
       },
       start_time: {
-          type: DataTypes.TIME,
+          type: DataTypes.STRING,
           allowNull: false,
           notEmpty: true,
       },
       end_time: {
-          type: DataTypes.TIME,
+          type: DataTypes.STRING,
           allowNull: false,
           notEmpty: true
       },
@@ -52,15 +52,15 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   
-    Event.associate = function(models) {
+    Occasion.associate = function(models) {
       // We're saying that an Event should belong to a Family
       // An Event can't be created without a Family due to the foreign key constraint
-      Event.belongsTo(models.Family, {
+      Occasion.belongsTo(models.Family, {
         foreignKey: {
           allowNull: false
         }
       });
     };
   
-    return Event;
+    return Occasion;
   };
