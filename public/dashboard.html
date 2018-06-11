@@ -9,33 +9,31 @@
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Custom Scroller Js CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- <link rel="stylesheet" href="style2.css"> -->
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
-        <style>
+<style>
+
 body {
   overflow-x: hidden;
 }
 
 #wrapper {
-  padding-left: 0;
+    padding-left: 250px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
-  padding-left: 100px;
-}
-
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
   left: 250px;
-  width: 0;
+  width: 250px;
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
@@ -46,20 +44,14 @@ body {
   transition: all 0.5s ease;
 }
 
-#wrapper.toggled #sidebar-wrapper {
-  width: 100px;
-}
 
 #page-content-wrapper {
   width: 100%;
   position: absolute;
+  margin-right: -250px;
   padding: 15px;
 }
 
-#wrapper.toggled #page-content-wrapper {
-  position: absolute;
-  margin-right: -250px;
-}
 
 
 /* Sidebar Styles */
@@ -67,7 +59,7 @@ body {
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 100px;
+  width: 250px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -111,66 +103,54 @@ body {
 
 @media(min-width:768px) {
   #wrapper {
-    padding-left: 0;
+    padding-left: 250px;
   }
-  #wrapper.toggled {
-    padding-left: 100px;
-  }
+
   #sidebar-wrapper {
-    width: 0;
-  }
-  #wrapper.toggled #sidebar-wrapper {
     width: 100px;
   }
+
   #page-content-wrapper {
     padding: 20px;
     position: relative;
-  }
-  #wrapper.toggled #page-content-wrapper {
-    position: relative;
     margin-right: 0;
   }
+
+.fa {
+    display: inline;
 }
 
-        </style>
+}
+
+</style>
+
 </head>
 
 <body>
-<!-- Sidebar -->
+
 <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Fam1</a>
-                </li>
-                <li>
-                    <a href="#">Fam2</a>
-                </li>
-                <li>
-                    <a href="#">Fam3</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <h1>Ohana</h1>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                    <a href="#"><i class="fa fa-home fa-3x" style="color:#ffffff;" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <img src="./assets/images/cat.png">
+            </li>
+            <li>
+                <img src="./assets/images/penguin.png">
+            </li>
+            <li>
+                <img src="./assets/images/bear.png">
+            </li>
+        </ul>
     </div>
-    <!-- /#wrapper -->
+    <!-- /#sidebar-wrapper -->
+
+</div>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -178,10 +158,39 @@ body {
 
     <!-- Menu Toggle Script -->
     <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+    // $("#menu-toggle").click(function(e) {
+    //     e.preventDefault();
+    //     $("#wrapper").toggleClass("toggled");
+    // });
+
+$(document).ready(function () {
+    $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
     });
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+});
+
+
+$(document).ready(function () {
+
+    $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+    });
+
+    $('#sidebarCollapse').on('click', function () {
+        // open or close navbar
+        $('#sidebar').toggleClass('active');
+        // close dropdowns
+        $('.collapse.in').toggleClass('in');
+        // and also adjust aria-expanded attributes we use for the open/closed arrows
+        // in our CSS
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+
+});
    
    
     </script>
@@ -206,6 +215,12 @@ body {
     //   $("#myevents-card").append("<h5 class='card-text'> Votes: #votes </h5>");
     //   $("#myevents-card").append("<h5 class='card-text'> Created by: David </h5>");
     </script>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- Bootstrap Js CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Custom Scroller Js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     
 
   
