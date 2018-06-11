@@ -12,6 +12,7 @@ body {
 }
 
 .card-register {
+    padding: 1.5rem;
     margin: 20rem;
     width: 40rem;
 }
