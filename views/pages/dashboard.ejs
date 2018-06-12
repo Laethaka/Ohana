@@ -8,9 +8,35 @@
 <body>
     <div class="container-fluid">
         <% include ../partials/navbar %>
+        <% include ../partials/event-card %>
     </div>
 
   <script src="js/index.js" type='text/javascript'></script>
+  <script type='text/javascript'>
+      // heart click
+      $("#heart-vote").on("click", function() {
+        var state = $(this).attr("data-vote");
+
+        if (state === "false") {
+            $(this).html("<h5 class='text-center'><i class='fas fa-heart'></i></h5>");
+            $(this).attr("data-vote", "true");
+        } else {
+            $(this).html("<h5 class='text-center'><i class='far fa-heart'></i></h5>");
+            $(this).attr("data-vote", "false");
+        }
+        });
+
+        // add new card
+        $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New message to ' + recipient)
+        modal.find('.modal-body input').val(recipient)
+        });
+  </script>
   </body>
 
 </html>
