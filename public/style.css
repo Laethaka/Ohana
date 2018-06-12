@@ -13,12 +13,14 @@ body {
 
 .margin {
     margin-left: 7rem;
-    margin-top: 2rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
 
 }
 
+.family-dashboard-title {
+    
+}
 
 .card {
     border: 1px solid transparent;
