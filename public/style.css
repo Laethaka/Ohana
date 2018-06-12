@@ -11,16 +11,33 @@ body {
     font-weight: 300;
 } */
 
+.white-text {
+    color: white;
+}
+
 .margin {
     margin-left: 7rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
-
 }
 
 .navbar {
     margin: 0px;
     padding: 2rem 0rem 0rem 0rem;
+}
+
+.ballot-box {
+    background-color: transparent;
+    border: none;
+}
+
+.members-margin {
+    margin-right: 1rem;
+}
+
+.btn-secondary {
+    font-size: 1.4rem;
+    font-weight: 300;
 }
 
 .navbar-brand {
@@ -49,13 +66,13 @@ body {
 }
 
 .card-event {
- margin: 2rem;
- width: 30%;
+    margin: 2rem;
+    width: 30%;
 }
 
 .card-empty {
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.483);
+    border: 1px solid rgba(0, 0, 0, 0.483);
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -66,7 +83,7 @@ body {
 }
 
 .plus-circle {
-    color: rgba(255, 255, 255, 0.202); 
+    color: rgba(0, 0, 0, 0.202); 
     font-size: 4rem;
 }
 
@@ -90,8 +107,11 @@ body {
     -webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
-    }
+}
 
+#event-ballot {
+    padding: 1.5rem;
+}
 
 /* Sidebar Styles */
 .sidebar-nav {
