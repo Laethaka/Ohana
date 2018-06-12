@@ -1,6 +1,12 @@
 $(document).ready(function() {
+     
+  // debugger;
 
-  console.log('ready!')
+  $("#loginForm").submit(function(event){
+    event.preventDefault();
+
+    console.log('ready!')
+  })
 
 
   $('#loginBtn').on("click", function(event){

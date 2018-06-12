@@ -9,7 +9,12 @@ var db = require("./models");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
+
+app.use(express.static("public"));
+
+// app.set('view engine', 'ejs');
 
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);

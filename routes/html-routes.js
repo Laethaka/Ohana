@@ -9,14 +9,16 @@ module.exports = function(app) {
   });
 
   app.get("/family/:nickname", function(req, res) {
-    res.render('pages/landing', {
-      famName: req.params.nickname
+    var famName = req.params.nickname;
+    console.log("famName " + famName);
+    res.render('pages/landing',{
+      famName: famName
     });
   });
   
   // Family Dashboard Page 
   app.get('/dashboard', function(req, res) {
-    res.render('pages/dashboard');
+    res.render('/pages/dashboard');
   });
 
   // Registration Page
