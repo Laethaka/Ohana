@@ -16,6 +16,8 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,700" rel="stylesheet">
+    <!-- fotnawsome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 
 
@@ -49,24 +51,152 @@
         <!-- row -->
         <div class="row">
             <div class="margin">
-                <div class="col-md- 3">
+                <!-- cards start -->
+                <br>
+                <br>
+                <!-- card 1 start -->
+                <div class="card-deck">
                     <!-- card 1 -->
-                    <div class="card card-event" style="width: 18rem;">
-                        <img class="card-img-top" src="./assets/images/ice-cream.svg" alt="Card image cap">
+                    <div class="card card-event">
+                        <!-- card header -->
+                        <div class="card-header">
+                            <span class="float-left">
+                                <small>##/##/18</small>
+                                <h5 class="card-title">Even title</h5>
+                            </span>
+                            <span class="float-right" data-vote="false">
+                                <small id="number-votes" class="text-center">#</small>
+                                <small class="text-center">Votes</small>
+                                <h5 id="heart-vote" class="text-center"><i class="far fa-heart"></i></h5>
+                            </span>
+                        </div>
+                        <!-- card body -->
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <span>
+                                <small><i class="fas fa-map-marker"></i>#Location</small>
+                                <small><i class="far fa-clock"></i>##:## - ##:##</small>
+                            </span>
+                            <div class="img-placeholder"></div>
+                            <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                        <!-- card footer -->
+                        <div class="card-footer">
+                            <span class="float-left text-muted">
+                                <small>#</small>
+                                <small>Families attending</small>
+                            </span>
+                            <span class="float-right text-muted">
+                                <small>Created by</small>
+                                <small>#</small>
+                            </span>
                         </div>
                     </div>
-                    <!-- end card 1 -->
+
+
+
+                    <!-- card empty: Button trigger modal -->
+                    <div id="card-button" data-toggle="modal" data-target="#exampleModalCenter" class="card card-event card-empty pointer" >
+                        <div class="card-body d-flex justify-content-center align-items-center">
+                            <h1 class="plus-circle"><i class="fas fa-plus-circle"></i></h1>
+                        </div>
+                    </div>
+                   
+                    <!-- card empty end-->
+
+                    <!-- card empty: Button trigger modal  -->
+                    <div class="card card-event card-empty">
+                        <div class="card-body d-flex justify-content-center align-items-center">
+                            <h1 class="plus-circle"><i class="fas fa-plus-circle"></i></h1>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md- 3"></div>
-                <div class="col-md- 3"></div>
+                <!-- card empty end -->
+                <!-- cards end -->
             </div>
+
+ 
+              
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                        <!-- modal header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Create New Event</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <!-- modal body -->
+                        <div class="modal-body">
+                            <!-- form -->
+                            <form>
+                                <!-- Title -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="event-title" placeholder="Add Event Title">
+                                </div>
+                                <!-- Date and Time -->
+                                <div class="form-group form-row">
+                                    <div class="col-5">
+                                        <input id="event-date" type="date" class="form-control" placeholder="00/00/00">
+                                    </div>
+                                    <div class="col-7">
+                                        <input id="event-time" type="time" class="form-control" placeholder=" ">
+                                    </div>
+                                </div>
+                                <!-- Location -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="event-location" aria-describedby="eventLocation" placeholder="Location">
+                                </div>                        
+                                <!-- Description -->
+                                <div class="form-group">
+                                    <textarea class="form-control" id="event-description" rows="3" placeholder="Add a description..."></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+
+                    </div>
+                    <!-- end modal content div -->
+                </div>
+            </div>
+
         <!-- end row -->
         </div>
     </div>
         
+
+    <script>
+        // heart click
+        $("#heart-vote").on("click", function() {
+        var state = $(this).attr("data-vote");
+
+        if (state === "false") {
+            $(this).html("<h5 class='text-center'><i class='fas fa-heart'></i></h5>");
+            $(this).attr("data-vote", "true");
+        } else {
+            $(this).html("<h5 class='text-center'><i class='far fa-heart'></i></h5>");
+            $(this).attr("data-vote", "false");
+        }
+        });
+
+        // add new card
+        $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New message to ' + recipient)
+        modal.find('.modal-body input').val(recipient)
+        });
+
+    </script>
 </body>
 </html>

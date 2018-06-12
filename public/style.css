@@ -4,10 +4,19 @@ body {
     background-size: cover;   
     font-family: 'Rubik', sans-serif;
     overflow-x: hidden;
+    
 }
 
+/* h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+} */
+
 .margin {
-    margin-left: 40rem;
+    margin-left: 7rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+
 }
 
 
@@ -33,6 +42,33 @@ body {
 
 .card-event {
  margin: 2rem;
+ width: 30%;
+}
+
+.card-empty {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.483);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.plus-circle {
+    color: rgba(255, 255, 255, 0.202); 
+    font-size: 4rem;
+}
+
+.img-placeholder {
+    background-color: #48556381;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 10rem;
+    border-radius: 0.3rem;
 }
 
 #sidebar-wrapper {
