@@ -1,17 +1,31 @@
 var path = require("path");
 
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 module.exports = function(app) {
 
   // use res.render to load up an ejs view file
   // Login/Index Page
   app.get("/", function(req, res) {
+    if (req.user) {
+      res.render('pages/family')
+    }
     res.render('pages/index');
+  });
+
+  app.get("/register", function(req, res) {
+    if (req.user) {
+      res.render('pages/family', {
+        famName: famName
+      })
+    }
+    res.render('pages/register');
   });
 
   app.get("/family/:nickname", function(req, res) {
     var famName = req.params.nickname;
     console.log("famName " + famName);
-    res.render('pages/landing',{
+    res.render('pages/family',{
       famName: famName
     });
   });
