@@ -11,18 +11,21 @@ module.exports = function(app) {
                 user_password: req.body.password
             }
         }).then(function(result) {
-            if (result) {//user found
+            if (res) {//user found
                 db.Family.findOne({//FINDING FAMILY
                     where: {
                         id: result.FamilyId
                     }            
-                }).then(function(result) {
-                    console.log(result.dataValues.nick_name);
-                    res.redirect(`/family/${result.dataValues.nick_name}`)
+                }).then(function(data) {
+                    var nickname = data.dataValues.nick_name;
+                    console.log(nickname);
+                    res.redirect("/family/" + nickname);
+
                 })
             } else {
                 console.log('user not found!')
             }
+
         })
     })
 };
