@@ -7,11 +7,15 @@
                 <i class="far fa-user-circle"></i> User name
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-            <button class="dropdown-item" type="button">Create Event Ballot</button>
-            <button class="dropdown-item" type="button">Create Family Dashboard</button>
-            <button class="dropdown-item" type="button">Join Dasboard</button>
-            <button class="dropdown-item" type="button">Settings</button>
-            <button class="dropdown-item" type="button">Log out</button>
+            <button class="dropdown-item" id="new-ballot" type="button" data-toggle="modal" data-target="#create-new-ballot">Create Event Ballot</button>
+            <button class="dropdown-item" id="new-dashboard" type="button">Create Family Dashboard</button>
+            <button class="dropdown-item" id="join-dashboard" type="button">Join Dasboard</button>
+            <button class="dropdown-item" id="to-settings" type="button">Settings</button>
+            <button class="dropdown-item" id="logout" type="button">Log out</button>
         </div>
         </div>
 </nav>
+
+<div>
+    <% include newballot %>
+</div>
