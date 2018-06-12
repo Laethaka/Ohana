@@ -4,7 +4,16 @@ module.exports = function(app) {
 
   // use res.render to load up an ejs view file
   // Login/Index Page
+  app.get("/", function(req, res) {
+    res.render('pages/index');
+  });
 
+  app.get("/family/:nickname", function(req, res) {
+    res.render('pages/landing', {
+      famName: req.params.nickname
+    });
+  });
+  
   // Family Dashboard Page 
   app.get('/dashboard', function(req, res) {
     res.render('pages/dashboard');
@@ -20,9 +29,5 @@ module.exports = function(app) {
     res.render('pages/landing');
   });
 
-  // Index Page (login)
-  app.get('/index', function(req, res) {
-    res.render('pages/index');
-  });
-
 };
+
