@@ -23,6 +23,14 @@ body {
     padding: 2rem 0rem 0rem 0rem;
 }
 
+.ballot-box {
+    background-color: #29323ca5;
+}
+
+.members-margin {
+    margin-right: 1rem;
+}
+
 .btn-secondary {
     font-size: 1.4rem;
     font-weight: 300;
