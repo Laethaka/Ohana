@@ -8,14 +8,14 @@ module.exports = function(app) {
   // Login/Index Page
   app.get("/", function(req, res) {
     if (req.user) {
-      res.render('pages/family')
+      res.render('../views/pages/family')
     }
     res.render('pages/index');
   });
 
   app.get("/register", function(req, res) {
     if (req.user) {
-      res.render('pages/family', {
+      res.render('../views/pages/family', {
         famName: famName
       })
     }
@@ -25,7 +25,7 @@ module.exports = function(app) {
   app.get("/family/:nickname", function(req, res) {
     var famName = req.params.nickname;
     console.log("famName " + famName);
-    res.render('pages/family',{
+    res.render('../views/pages/family',{
       famName: famName
     });
   });

@@ -90,16 +90,19 @@
                             <div class="col-7">
                                 <input id="event-time" type="time" class="form-control" placeholder="00:00PM">
                             </div>
+
                         </div>
-                        <!-- Location -->
+                        <!-- Location (Google Places Autocomplete) -->         
                         <div class="form-group">
-                            <input type="text" class="form-control" id="event-location" aria-describedby="eventLocation" placeholder="Location">
-                        </div>                        
+                            <input id="autocomplete" placeholder="Enter address"
+                                onFocus="geolocate()" type="text" style="width: 100%"></input>
+                        </div>                     
                         <!-- Description -->
                         <div class="form-group">
                             <textarea class="form-control" id="event-description" rows="3" placeholder="Add a description..."></textarea>
                         </div>
                     </form>
+
                 </div>
                 
                 <!-- modal footer -->
@@ -112,5 +115,7 @@
         </div>
     </div>
 
-<!-- end row -->
-</div>
+    <!-- end row -->
+    </div>
+
+    
