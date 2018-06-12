@@ -17,7 +17,7 @@ module.exports = function(app) {
 
   app.get("/register", function(req, res) {
     if (req.user) {
-      res.render('pages/family', {
+      res.render('../views/pages/family', {
         famName: famName
       })
     }
@@ -27,24 +27,24 @@ module.exports = function(app) {
   app.get("/family/:nickname", function(req, res) {
     var famName = req.params.nickname;
     console.log("famName " + famName);
-    res.render('pages/family',{
+    res.render('../views/pages/family',{
       famName: famName
     });
   });
   
   // Family Dashboard Page 
   app.get('/dashboard', function(req, res) {
-    res.render('/pages/dashboard');
+    res.render('../views/pages/dashboard');
   });
 
   // Registration Page
   app.get('/register', function(req, res) {
-    res.render('pages/register');
+    res.render('../views/pages/register');
   });
 
   // Landing Page 
   app.get('/landing', function(req, res) {
-    res.render('pages/landing');
+    res.render('../views/pages/landing');
   });
 
 };
