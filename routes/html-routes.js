@@ -29,6 +29,13 @@ module.exports = function(app) {
       famName: famName
     });
   });
+
+  // app.get("/family/:nickname", function(req, res) {
+  //   res.render('pages/landing'
+  //   , {
+  //     famName: req.params.nickname
+  //   });
+  // });
   
   // Family Dashboard Page 
   app.get('/dashboard', function(req, res) {
@@ -46,4 +53,3 @@ module.exports = function(app) {
   });
 
 };
-
