@@ -18,10 +18,16 @@ body {
 
 }
 
-.family-dashboard-title {
-    
+.navbar {
+    margin: 0px;
+    padding: 2rem 0rem 0rem 0rem;
 }
 
+.navbar-brand {
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+}
 .card {
     border: 1px solid transparent;
     border-radius: 0.5em;

@@ -5,12 +5,25 @@ $(document).ready(function() {
   $("#loginForm").submit(function(event){
     event.preventDefault();
 
-    var logins = {};
-    logins.username = $("#username").val().trim();
-    logins.password = $("#password").val().trim();
-  
-    $.post('/api/user', logins).then(function(results) {
-
-    })
+    console.log('ready!')
   })
+
+
+  $('#loginBtn').on("click", function(event){
+    event.preventDefault();
+    var login = $("#username").val().trim();
+    console.log(login)
+    $.post('/api/user' + login).then(function(results) {
+    })
+  });
+
+  // function processLogin() {
+  //   console.log('processing login')
+  //   event.preventDefault();
+  //   var login = $("#username").val().trim();
+  //   console.log(login)
+  //   $.post('/api/user' + login).then(function(results) {
+  //   })
+  // }
+
 })
