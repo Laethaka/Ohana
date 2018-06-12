@@ -2,13 +2,27 @@ var path = require("path");
 
 module.exports = function(app) {
 
-    app.get("/", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/index.html"));
-    });
+  // use res.render to load up an ejs view file
+  // Login/Index Page
 
-    app.get("/landing", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/landing.html"));
-    });
+  // Family Dashboard Page 
+  app.get('/dashboard', function(req, res) {
+    res.render('pages/dashboard');
+  });
 
-  };
-  
+  // Registration Page
+  app.get('/register', function(req, res) {
+    res.render('pages/register');
+  });
+
+  // Landing Page 
+  app.get('/landing', function(req, res) {
+    res.render('pages/landing');
+  });
+
+  // Index Page (login)
+  app.get('/index', function(req, res) {
+    res.render('pages/index');
+  });
+
+};
