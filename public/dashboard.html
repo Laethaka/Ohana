@@ -4,223 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <!-- Bootstrap Js CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Custom Scroller Js CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- <link rel="stylesheet" href="style2.css"> -->
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
-<style>
-
-body {
-  overflow-x: hidden;
-}
-
-#wrapper {
-    padding-left: 250px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-#sidebar-wrapper {
-  z-index: 1000;
-  position: fixed;
-  left: 250px;
-  width: 250px;
-  height: 100%;
-  margin-left: -250px;
-  overflow-y: auto;
-  background: #000;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-
-#page-content-wrapper {
-  width: 100%;
-  position: absolute;
-  margin-right: -250px;
-  padding: 15px;
-}
-
-
-
-/* Sidebar Styles */
-
-.sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.sidebar-nav li {
-  text-indent: 20px;
-  line-height: 40px;
-}
-
-.sidebar-nav li a {
-  display: block;
-  text-decoration: none;
-  color: #999999;
-}
-
-.sidebar-nav li a:hover {
-  text-decoration: none;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.sidebar-nav li a:active, .sidebar-nav li a:focus {
-  text-decoration: none;
-}
-
-.sidebar-nav>.sidebar-brand {
-  height: 65px;
-  font-size: 18px;
-  line-height: 60px;
-}
-
-.sidebar-nav>.sidebar-brand a {
-  color: #999999;
-}
-
-.sidebar-nav>.sidebar-brand a:hover {
-  color: #fff;
-  background: none;
-}
-
-@media(min-width:768px) {
-  #wrapper {
-    padding-left: 250px;
-  }
-
-  #sidebar-wrapper {
-    width: 100px;
-  }
-
-  #page-content-wrapper {
-    padding: 20px;
-    position: relative;
-    margin-right: 0;
-  }
-
-.fa {
-    display: inline;
-}
-
-}
-
-</style>
-
+    <!-- bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,700" rel="stylesheet">
 </head>
 
+
 <body>
-
-<div id="wrapper">
-
-        <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                    <a href="#"><i class="fa fa-home fa-3x" style="color:#ffffff;" aria-hidden="true"></i></a>
-            </li>
-            <li>
-                <a href="#"><img src="./assets/images/cat.png"></a>
-            </li>
-            <li>
-                <a href="#"><img src="./assets/images/penguin.png"></a>
-            </li>
-            <li>
-                <a href="#"><img src="./assets/images/bear.png"></a>
-            </li>
-        </ul>
+    <!-- container -->
+    <div class="container-fluid">
+        <!-- sidebar -->               
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li>
+                        <a href="#"><img src="./assets/images/home-2.svg"></a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="#"><img src="./assets/images/avocado.svg"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./assets/images/whale.svg"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./assets/images/rainbow.svg"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./assets/images/add-grey.svg"></a>
+                    </li>
+                </ul>
+            </div>
+        <!-- end sidebar -->
+        
+        
+        <!-- row -->
+        <div class="row">
+            <div class="margin">
+                <div class="col-md- 3">
+                    <!-- card 1 -->
+                    <div class="card card-event" style="width: 18rem;">
+                        <img class="card-img-top" src="./assets/images/ice-cream.svg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <!-- end card 1 -->
+                </div>
+                <div class="col-md- 3"></div>
+                <div class="col-md- 3"></div>
+            </div>
+        <!-- end row -->
+        </div>
     </div>
-    <!-- /#sidebar-wrapper -->
-
-</div>
-
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-    <script>
-
-
-$(document).ready(function () {
-    $("#sidebar").mCustomScrollbar({
-        theme: "minimal"
-    });
-
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-    });
-});
-
-
-$(document).ready(function () {
-
-    $("#sidebar").mCustomScrollbar({
-        theme: "minimal"
-    });
-
-    $('#sidebarCollapse').on('click', function () {
-        // open or close navbar
-        $('#sidebar').toggleClass('active');
-        // close dropdowns
-        $('.collapse.in').toggleClass('in');
-        // and also adjust aria-expanded attributes we use for the open/closed arrows
-        // in our CSS
-        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-    });
-
-});
-   
-   
-    </script>
-
-
-<script>
-    // var eventCard = $("<div>");
-    //   // Add a class to this div: 'card'
-    //   eventCard.addClass("card");
-    //   // Add an id to the card
-    //   eventCard.attr("id", "myevents-card");
-
-    //   // Append the card to the event section of family dashboard
-    //   $("#myevent-well").append(eventCard);
-  
-    //   // Now  we add our event data to the well we just placed on the page
-    //   $("#myevents-card").append("<h6 class='card-text'> Date </h6>"); // Date
-    //   $("#myevents-card").append("<h5 class='card-title'> Title </h5>"); // Title
-    //   $("#myevents-card").append("<h6 class='card-text'> Location & Time</h6>"); // Location
-    //   $("#myevents-card").append("<img class='card-img-top' src='https://picsum.photos/200/200' >"); // Image
-    //   $("#myevents-card").append("<p class='card-text'> Description </p>");
-    //   $("#myevents-card").append("<h5 class='card-text'> Votes: #votes </h5>");
-    //   $("#myevents-card").append("<h5 class='card-text'> Created by: David </h5>");
-    </script>
-
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<!-- Bootstrap Js CDN -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- Custom Scroller Js CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    
-
-  
+        
 </body>
-
 </html>

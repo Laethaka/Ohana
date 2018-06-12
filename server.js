@@ -15,6 +15,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 
+app.set('view engine', 'ejs');
+
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 // require("./routes/post-api-routes.js")(app);
