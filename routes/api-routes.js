@@ -11,23 +11,46 @@ module.exports = function(app) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
-    res.redirect("/members");
-  });
+    // console.log("LOGGING IN THIS USER", req.body);
+    db.User.findOne({//FINDING USER
+        where: {
+            email: req.body.email
+        }
+    }).then(function(result) {
+        if (result) {//user found
+        //   console.log('user found:', result)
+            db.Family.findOne({//FINDING FAMILY
+                where: {
+                    id: result.FamilyId
+                }            
+            }).then(function(data) {
+              console.log('family found!')
+              var nickname = data.dataValues.nick_name;
+              res.json(nickname)
+            })
+        } else {
+            console.log('user not found!')
+        }
+    })
+});
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    console.log("SIGNING THIS FOOL UP:",req.body);
+    // console.log("SIGNING THIS FOOL UP:",req.body);
     db.User.create({
       email: req.body.email,
       password: req.body.password,
       age: req.body.age,
       zipcode: req.body.zipcode,
       primary_user: req.body.primary_user,
-      name: req.body.name
-    }).then(function() {
-      res.redirect(307, "/api/login");
+      name: req.body.name,
+      FamilyId: req.body.familyId
+    }).then(function(results) {
+        // console.log(results.dataValues);
+        res.json('/api/login');
+    // res.end();
     }).catch(function(err) {
       console.log(err);
       res.json(err);
