@@ -112,7 +112,9 @@ body {
     padding: 0.35rem;
 }
 
-
-
+/* Moves autocomplete option list infront of modal */
+.pac-container {
+    z-index: 1051 !important;
+}
 
 
