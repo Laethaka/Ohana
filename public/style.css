@@ -11,11 +11,14 @@ body {
     font-weight: 300;
 } */
 
+.white-text {
+    color: white;
+}
+
 .margin {
     margin-left: 7rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
-
 }
 
 .navbar {
@@ -24,7 +27,8 @@ body {
 }
 
 .ballot-box {
-    background-color: #29323ca5;
+    background-color: transparent;
+    border: none;
 }
 
 .members-margin {
