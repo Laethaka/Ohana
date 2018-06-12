@@ -3,12 +3,11 @@ var db = require("../models");
 
 module.exports = function(app) {
 
-    app.post(`/api/user/`, function(req,res) {
-        console.log("HERE IT IS", req.body);
+    app.post(`/api/user/:username`, function(req,res) {
+        console.log("HERE IT IS", req.params.username);
         db.User.findOne({//FINDING USER
             where: {
-                user_name: req.body.username,
-                user_password: req.body.password
+                user_name: req.params.username,
             }
         }).then(function(result) {
             if (result) {//user found
