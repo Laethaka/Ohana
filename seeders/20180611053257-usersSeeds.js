@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('users', [{
       user_name: 'jesselof',
-      user_password: 'password',
+      password: 'password',
       name: 'Jesse',
       email: 'laethaka@gmail.com',
       age: 31,
@@ -15,7 +15,7 @@ module.exports = {
       primary_user: false
     }, {
       user_name: 'bryanalb',
-      user_password: 'password',
+      password: 'password',
       name: 'Bryan',
       email: 'bryan@alb.com',
       age: 45,
@@ -26,7 +26,7 @@ module.exports = {
       primary_user: false
     }, {
       user_name: 'sophieoba',
-      user_password: 'password',
+      password: 'password',
       name: 'Sophie',
       email: 'sophie@oba.com',
       age: 15,
@@ -37,7 +37,7 @@ module.exports = {
       primary_user: false
     }, {
       user_name: 'mariajes',
-      user_password: 'password',
+      password: 'password',
       name: 'Maria',
       email: 'maria@jes.com',
       age: 30,
