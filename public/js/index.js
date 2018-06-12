@@ -1,5 +1,7 @@
 $(document).ready(function() {
      
+  // debugger;
+
   $("#loginForm").submit(function(event){
     event.preventDefault();
 
