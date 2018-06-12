@@ -8,9 +8,11 @@ module.exports = function(app) {
   // Login/Index Page
   app.get("/", function(req, res) {
     if (req.user) {
-      res.render('../views/pages/family')
+      res.render('pages/family')
+      console.log('homepage hit with user!')
     }
     res.render('pages/index');
+    console.log('homepage hit without user!')
   });
 
   app.get("/register", function(req, res) {
