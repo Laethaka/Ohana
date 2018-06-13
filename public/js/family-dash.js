@@ -1,6 +1,6 @@
 // On page load
 $( document ).ready(function() {
-    
+    console.log('hithere')
 // Make a get request to our api route that will return every book
 $.get("/api/myevents", function(data) {
     // For each event that our server sends us back
