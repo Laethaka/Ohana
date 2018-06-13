@@ -16,7 +16,7 @@ module.exports = function(app) {
     if (req.user) {
       res.render('pages/dashboard')
     }
-    res.render('pages/index');
+    res.render('pages/login');
   });
 
   app.get("/register", function(req, res) {

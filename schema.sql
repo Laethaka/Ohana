@@ -3,7 +3,9 @@
 
 use ohana_db;
 -- delete from Users;
-select * from Occasions;
+-- insert into occasions values
+
+select * from Users;
 
 -- select * from Users;
 

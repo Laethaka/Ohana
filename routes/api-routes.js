@@ -19,7 +19,7 @@ module.exports = function(app) {
                     id: result.FamilyId
                 }            
             }).then(function(data) {
-              console.log('family found!')
+            //   console.log('family found!')
               var nickname = data.dataValues.nick_name;
               res.json(nickname)
             })
@@ -94,13 +94,15 @@ module.exports = function(app) {
         })
     });
 
-    // app.get('/api/events/:userId', function(req,res) {
-    //     db.Occasion.findAll({
-    //         where: {
-    //             user: 
-    //         }
-    //     })
-    // })
+    app.get('/api/events/:userFamId', function(req,res) {
+        db.Occasion.findAll({
+            where: {
+                FamilyId: req.params.userFamId
+            }
+        }).then(function(data) {
+            res.json(data)
+        })
+    })
 
 
 
