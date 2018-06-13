@@ -1,9 +1,9 @@
 -- DROP DATABASE IF EXISTS ohana_db;
 -- CREATE DATABASE ohana_db;
 
-use ohana_db;
+USE ohana_db;
 -- delete from Users;
-select * from Users;
+SELECT * FROM Users;
 
 -- select * from Users;
 
