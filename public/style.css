@@ -207,31 +207,38 @@ box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 }
 
 
+
+
+/* csss for landing -check */
+
 p {
     line-height: 1.75;
-}
+  }
+  
+  
 
-
-::selection {
+  
+  ::selection {
     background: #fec810;
     text-shadow: none;
-}
-
-#mainNav {
+  }
+  
+  
+  #mainNav {
     font-size: 12px;
     right: 0;
     padding: 13px;
     border: 0;
     background-color: #21252962;
     box-shadow: 0px 5px 106px -4px rgba(0,0,0,0.89);
-}
-
-#mainNav .navbar-brand {
+  }
+  
+  #mainNav .navbar-brand {
     color: #fec810;
-}
-
- 
-header.masthead {
+  }
+  
+  
+  header.masthead {
     text-align: center;
     color: white;
     background-image: url("./assets/images/adventure-clouds-daylight-130111.jpg");
@@ -239,38 +246,38 @@ header.masthead {
     background-position: center center;
     background-size: cover;
     height: 880px;
-}
+  }
   
-header.masthead .intro-text {
+  header.masthead .intro-text {
     padding-top: 250px;
     padding-bottom: 100px;
-}
-
-header.masthead .intro-text .intro-lead-in {
+  }
+  
+  header.masthead .intro-text .intro-lead-in {
     font-size: 22px;
     font-style: italic;
     line-height: 22px;
     margin-bottom: 25px;
-}
-
-header.masthead .intro-text .intro-heading {
+  }
+  
+  header.masthead .intro-text .intro-heading {
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
     margin-bottom: 25px;
-}
+  }
 
-footer {
+  footer {
     background-image: linear-gradient(60deg, #485563 0%, #29323c 100%);
     height: 400px;
-}
+  }
 
-.intro-text-public {
-    width: 60%;
-    text-align: center;
-    font-size: 1.15rem;
-    font-weight: 300;
-}
+  .intro-text-public {
+      width: 60%;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 300;
+  }
   
   
 
