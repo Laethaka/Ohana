@@ -9,10 +9,10 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     if (req.user) {
       res.render('pages/dashboard')
-      console.log('homepage hit with user!')
+      console.log('sign in page hit with user info!')
     }
     res.render('pages/landing');
-    console.log('homepage hit without user!')
+    console.log('sign in page hit without user info!')
   });
 
   app.get("/register", function(req, res) {
@@ -50,6 +50,10 @@ module.exports = function(app) {
   // Registration Page
   app.get('/register', function(req, res) {
     res.render('../views/pages/register');
+  });
+
+  app.get('/login', function(req, res) {
+    res.render('../views/pages/login');
   });
 
 };
