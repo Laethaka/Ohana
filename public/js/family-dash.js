@@ -8,7 +8,7 @@ $( document ).ready(function() {
             // console.log('proposed events data:',data)
             for (var idx=0; idx<data.length; idx++) {
                 var eventCard = $(`
-                    <div class="card shadow card-event">
+                    <div class="card card-event">
                         <div class="card-header">
                             <span class="float-left">
                                 <small>Last Updated: ${data[idx].updatedAt}</small>

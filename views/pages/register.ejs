@@ -12,55 +12,58 @@
                     <h2>Register an Account</h2>
                     <br>
 
-                    <form class="signup">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email-input" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="password-input" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="name-input" placeholder="Name">
-                        </div>
-                        <!-- row -->
-                        <div class="form row">
-                            <div class="form-group col">
-                                <input type="text" class="form-control" id="age-input" placeholder="Age">
+                        <form class="signup">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email-input" placeholder="Email">
                             </div>
-                            <div class="form-group col">
-                                <input type="text" class="form-control" id="zipcode-input" placeholder="Zipcode">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password-input" placeholder="Password">
                             </div>
-                        </div>
-
-                        
-
-                        <!-- row -->
-                        <div class="form row">
-                            <label>If you don't have a Ohana Family Dashboard Planner, create one:</label>
-                            <div class="form-group col">
-                                <input type="text" class="form-control" id="familyid-input" placeholder="Family ID">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name-input" placeholder="Name">
                             </div>
-                            <div class="form-check col">
-                                <input type="checkbox" class="form-check-input" id="primUser-input">
+                            <!-- row -->
+                            <div class="form row">
+                                <div class="form-group col">
+                                    <input type="text" class="form-control" id="age-input" placeholder="Age">
+                                </div>
+                                <div class="form-group col">
+                                    <input type="text" class="form-control" id="zipcode-input" placeholder="Zipcode">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label>If you already have one:</label>
-                            <input type="text" class="form-control" id="nickName-input" placeholder="Family Nick-Name">
-                            <label class="form-check-label" for="exampleInputPassword1">Primary User</label>
-                        </div>
-
-                        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span> <span class="msg"></span>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+     
+                            
+     
+                            <!-- row -->
+                            <div class="form">
+                                <div>
+                                    <label class="form-check-label" for="exampleInputPassword1">Will you be a Primary User</label>
+                                    <input type="checkbox" class="form-check-input" id="primUser-input">
+                                </div>
+                                <div>
+                                    <label>If you don't have a Ohana Family Dashboard Planner, create one:</label>
+                                    <input type="text" class="form-control" id="nickName-input" placeholder="Input a Family Nick-Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>If you already have one:</label>
+                                <input type="text" class="form-control" id="familyid-input" placeholder="Enter the Family ID">
+                            </div>
+     
+                            <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span> <span class="msg"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+                        </form>
+     
+                        <div class="text-center">
+                        <a class="d-block small mt-3" href="/">Login Page</a>
+                        <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
                     </form>
 
-                    <div class="text-center">
-                    <a class="d-block small mt-3" href="/">Login Page</a>
-                    <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+            
                 </div>
             </div>
         </div>
