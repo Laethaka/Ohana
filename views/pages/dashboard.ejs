@@ -40,11 +40,15 @@
                             <!-- DYNAMICALLY CREATED CARDS GO HERE -->
 
                             <!-- card empty: Button trigger modal -->
-                            <div class="card card-event card-empty pointer" data-toggle="modal" data-target="#exampleModalCenter">
+                            <div class="card card-event card-empty pointer" data-toggle="modal" data-target="#creationModal">
                                 <div class="card-body d-flex justify-content-center align-items-center">
                                     <h1 class="plus-circle"><i class="fas fa-plus-circle"></i></h1>
                                 </div>
                             </div>
+                        </div>
+                        <!-- MODALS -->
+                        <div>
+                            <% include ../partials/modal-new-ec %>
                         </div>
                     </div>
                 </div>
@@ -52,6 +56,9 @@
         </div>
     </div>
 
+    <div>
+        <% include ../partials/modal-new-ec %>
+    </div>
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBOcG9uq1Dazbp6y6VNwDpLvbNidiI8Ts&libraries=places&callback=initAutocomplete" async defer></script> -->
 <script type="text/javascript" src="/js/family-dash.js"> </script>
 
