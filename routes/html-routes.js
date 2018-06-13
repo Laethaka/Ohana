@@ -6,17 +6,22 @@ module.exports = function(app) {
 
   // Login/Index Page
   app.get("/", function(req, res) {
-    if (req.user) {
+    if (req.user) {//SENDING TO FAMILY DASHBOARD
       res.render('pages/dashboard')
-      console.log('homepage hit with user!')
     }
     res.render('pages/landing');
-    console.log('homepage hit without user!')
+  });
+
+  app.get("/login", function(req, res) {
+    if (req.user) {
+      res.render('pages/dashboard')
+    }
+    res.render('pages/index');
   });
 
   app.get("/register", function(req, res) {
     if (req.user) {
-      res.render('../views/pages/family', {
+      res.render('pages/dashboard', {
         famName: famName
       })
     }
@@ -30,11 +35,11 @@ module.exports = function(app) {
   //     famName: famName
   //   });
   // });
-  
+
   
   // Family Dashboard Page 
   app.get('/dashboard/:nickname', function(req, res) {
-    res.render('../views/pages/dashboard',
+    res.render('pages/dashboard',
     {
       famName: req.params.nickname
     });

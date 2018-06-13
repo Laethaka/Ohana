@@ -59,6 +59,7 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
+        FamilyId: req.user.FamilyId
       });
     }
   });    
@@ -92,6 +93,14 @@ module.exports = function(app) {
             res.json(data)
         })
     });
+
+    // app.get('/api/events/:userId', function(req,res) {
+    //     db.Occasion.findAll({
+    //         where: {
+    //             user: 
+    //         }
+    //     })
+    // })
 
 
 
