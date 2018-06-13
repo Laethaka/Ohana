@@ -3,16 +3,38 @@ body {
     background-repeat: no-repeat;
     background-size: cover;   
     font-family: 'Rubik', sans-serif;
-    overflow-x: hidden;
-    
+    /* overflow-x: hidden;  */
 }
 
-/* h1, h2, h3, h4, h5, h6 {
+.landing-img {
+    background-image: url("paper.gif");
+    background-repeat: no-repeat;
+    background-size: cover;   
+}
+
+h1, h2, h3, h4 {
     font-weight: 300;
-} */
+}
+
+hr {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    line-height: 1.75;
+}
+
+
+.green-text {
+    color: #1bbe10;
+}
+
 
 .white-text {
     color: white;
+    font-weight: 300;
 }
 
 .margin {
@@ -24,11 +46,6 @@ body {
 .navbar {
     margin: 0px;
     padding: 2rem 0rem 0rem 0rem;
-}
-
-.ballot-box {
-    background-color: transparent;
-    border: none;
 }
 
 .members-margin {
@@ -45,34 +62,50 @@ body {
     font-size: 2rem;
     font-weight: 300;
 }
+
 .card {
     border: 1px solid transparent;
     border-radius: 0.5em;
-    -webkit-box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.75);
+}
+
+.modal-content {
+    padding: 1.5rem;
+    width: 30rem;
+    border-radius: 0.5em;
 }
 
 .card-login {
     padding: 1.5rem;
     margin: 20rem;
     width: 30rem;
+    box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.75);
 }
 
 .card-register {
     padding: 1.5rem;
     margin: 20rem;
     width: 40rem;
+    box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.75);
 }
 
+.ballot-box {
+    background-color: transparent;
+}
+
+#event-ballot {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+
 .card-event {
-    margin: 2rem;
     width: 30%;
+    box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.75);
 }
 
 .card-empty {
     background-color: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.483);
+    border: 1px solid rgba(255, 255, 255, 0.483);
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -83,7 +116,7 @@ body {
 }
 
 .plus-circle {
-    color: rgba(0, 0, 0, 0.202); 
+    color: rgba(255, 255, 255, 0.202); 
     font-size: 4rem;
 }
 
@@ -104,13 +137,7 @@ body {
     width: 5.2rem;
     height: 100%;
     background-image: linear-gradient(60deg, #485563 0%, #29323c 100%);
-    -webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 41px 0px rgba(0,0,0,0.75);
-}
-
-#event-ballot {
-    padding: 1.5rem;
 }
 
 /* Sidebar Styles */
@@ -128,5 +155,105 @@ body {
 .pac-container {
     z-index: 1051 !important;
 }
+
+
+
+
+/* csss for landing -check */
+
+p {
+    line-height: 1.75;
+  }
+  
+  
+  .btn-xl {
+    font-size: 23px;
+    padding: 10px 20px;
+    box-shadow: 5px 20px 102px -25px rgba(0,0,0,0.51);
+  }
+  
+
+  .btn-outline-warning {
+    color: #fec810;
+    border-color: #fec810;
+  }
+
+  .btn-outline-warning:active, .btn-outline-warning:focus, .btn-outline-warning:hover {
+    background-color: #ecb900 !important;
+    border-color: #ecb900 !important;
+    color: white;
+  }
+
+  .btn-primary {
+    background-color: #fec810;
+    border-color: #fec810;
+  }
+  
+  .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    background-color: #ecb900 !important;
+    border-color: #ecb900 !important;
+    color: white;
+  }
+  
+  .btn-primary:active, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+  }
+  
+  
+  ::selection {
+    background: #fec810;
+    text-shadow: none;
+  }
+  
+  
+  #mainNav {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    border: 0;
+    background-color: #21252962;
+    box-shadow: 0px 5px 106px -4px rgba(0,0,0,0.89);
+  }
+  
+  #mainNav .navbar-brand {
+    color: #fec810;
+  }
+  
+  
+  header.masthead {
+    text-align: center;
+    color: white;
+    background-image: url("./assets/images/adventure-clouds-daylight-130111.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 880px;
+  }
+  
+  header.masthead .intro-text {
+    padding-top: 250px;
+    padding-bottom: 100px;
+  }
+  
+  header.masthead .intro-text .intro-lead-in {
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+    margin-bottom: 25px;
+  }
+  
+  header.masthead .intro-text .intro-heading {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 25px;
+  }
+
+  footer {
+    background-image: linear-gradient(60deg, #485563 0%, #29323c 100%);
+    height: 400px;
+  }
+  
+  
 
 
