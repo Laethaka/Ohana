@@ -102,8 +102,19 @@ module.exports = function(app) {
               console.log('user not found!')
           }
 
-      })
-    })
+      });
+  });
+  
+  app.post('/api/newFamily', function(req, res){
+    console.log("creating new family");
+    console.log(req.body);
+    // db.Family.create({
+    //     nick_name: req.body.nick_name
+    // }).then(function(data){
+    //     console.log(data);
+    // })
+  });
+    
 };
   
     // app.get(`/api/user/:id`, function(req, res) {
