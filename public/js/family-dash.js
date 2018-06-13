@@ -1,34 +1,54 @@
 // On page load
 $( document ).ready(function() {
     console.log('hithere')
-// Make a get request to our api route that will return every book
-$.get("/api/myevents", function(data) {
-    // For each event that our server sends us back
-    for (var i = 0; i < data.length; i++) {
-      // Create a parent div to hold event data
-      var eventCard = $("<div>");
-      // Add a class to this div: 'card'
-      eventCard.addClass("card");
-      // Add an id to the card
-      eventCard.attr("id", "myevents-card-" + i);
-      // Append the card to the event section of family dashboard
-      $("#myevent-well").append(eventCard);
-  
-      // Now  we add our event data to the well we just placed on the page
-      $("#myevents-card-" + i).append("<h4>" + data[i].date + "</h4>"); // Date
-      $("#myevents-card-" + i).append("<h2>" + data[i].title + "</h2>"); // Title
-      $("#myevents-card-" + i).append("<h4>" + data[i].location + "</h4>"); // Location
-      $("#myevents-card-" + i).append("<h4>" + data[i].time + "</h4>"); // Time
-      $("#myevents-card-" + i).append("<img>" + data[i].image + "</img>"); // Image
-      $("#myevents-card-" + i).append("<p>" + data[i].description + "</p>");
-      $("#myevents-card-" + i).append("<h5> Votes: " + data[i].votes + "</h5>");
-      $("#myevents-card-" + i).append("<h5> Created by: " + data[i].username + "</h5>");
-    }
-  });
+    var userFamId;
+    $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
+        userFamId = data.FamilyId;
+        // console.log('user fam id:',userFamId)
+        $.get(`/api/events/proposed/${userFamId}`, function(data) {
+            // console.log('proposed events data:',data)
+            for (var idx=0; idx<data.length; idx++) {
+                var eventCard = $(`
+                    <div class="card shadow card-event">
+                        <div class="card-header">
+                            <span class="float-left">
+                                <small>##/##/18</small>
+                                <h5 class="card-title">${data[idx].title}</h5>
+                            </span>
+                            <span class="float-right" data-vote="false">
+                                <small class="text-center">Current Vote Balance: ${data[idx].vote}</small>
+                                <h5 id="heart-vote" class="text-center"><i class="far fa-heart"></i></h5>
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <span>
+                                <small><i class="fas fa-map-marker"></i>${data[idx].location}</small>
+                                <small><i class="far fa-clock"></i>${data[idx].start_time} - ${data[idx].end_time}</small>
+                            </span>
+                            <div class="img-placeholder">${data[idx].photo}</div>
+                            <p class="card-text text-justify">${data[idx].description}</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="float-left text-muted">
+                                <small>${data[idx].num_families}</small>
+                                <small>Families attending</small>
+                            </span>
+                            <span class="float-right text-muted">
+                                <small>Event Category</small>
+                                <small>${data[idx].category}</small>
+                            </span>
+                        </div>
+                    </div>
+                `);
+                // eventCard.addClass('card').attr('id',`myevents-card-${idx}`)
+                $('.card-deck').prepend(eventCard);
+            } 
+        })
+    })    
 
 
   // heart click
-    $("#heart-vote").on("click", function() {
+    $("#heart-vote").on("click", function() {//CHANGES HEART COLOR
         var state = $(this).attr("data-vote");
 
     if (state === "false") {
@@ -41,7 +61,7 @@ $.get("/api/myevents", function(data) {
     });
 
     // add new card
-    $('#exampleModal').on('show.bs.modal', function (event) {
+    $('#exampleModal').on('show.bs.modal', function (event) {//EVENT CREATION MODAL
     var button = $(event.relatedTarget) // Button that triggered the modal
     var recipient = button.data('whatever') // Extract info from data-* attributes
     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
