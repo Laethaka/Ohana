@@ -63,4 +63,9 @@ module.exports = function(app) {
     res.render('../views/pages/login');
   });
 
+  //PUBLIC PAGE
+  app.get('/dashboard-public', function(req, res) {
+    res.render('../views/pages/dashboard-public');
+  });
+
 };
