@@ -85,6 +85,16 @@ module.exports = function(app) {
           }
       })
     })
+
+    app.get("/api/events", function(req, res) {//WORKS AS OF 6/13 AM
+        db.Occasion.findAll({
+        }).then(function(data) {
+            res.json(data)
+        })
+    });
+
+
+
 };
   
     // app.get(`/api/user/:id`, function(req, res) {
