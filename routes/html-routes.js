@@ -40,8 +40,11 @@ module.exports = function(app) {
   // });
   
   // Family Dashboard Page 
-  app.get('/dashboard', function(req, res) {
-    res.render('../views/pages/dashboard');
+  app.get('/dashboard/:nickname', function(req, res) {
+    res.render('../views/pages/dashboard',
+    {
+      famName: req.params.nickname
+    });
   });
 
   // Registration Page
