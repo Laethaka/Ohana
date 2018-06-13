@@ -1,23 +1,42 @@
+
 $(document).ready(function() {
-     
-  // debugger;
+  // Getting references to our form and inputs
+  var loginForm = $("form.login");
+  var emailInput = $("input#email-input");
+  var passwordInput = $("input#password-input");
 
-  $("#loginForm").submit(function(event){
-    event.preventDefault();
+  // When the form is submitted, we validate there's an email and password entered
+  loginForm.on("submit", function(event) {
+      event.preventDefault();
+      var userData = {
+      email: emailInput.val().trim(),
+      password: passwordInput.val().trim()
+      };
 
-    console.log('ready!')
-  })
+      if (!userData.email || !userData.password) {
+      return;
+      }
 
-
-  $('#loginBtn').on("click", function(event){
-    event.preventDefault();
-    var login = $("#username").val().trim();
-    console.log(login)
-    $.post('/api/user' + login).then(function(results) {
-    })
+      // If we have an email and password we run the loginUser function and clear the form
+      loginUser(userData.email, userData.password);
+      emailInput.val("");
+      passwordInput.val("");
   });
 
-  // function processLogin() {
+  // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+  function loginUser(email, password) {
+      $.post("/api/login", {
+      email: email,
+      password: password
+      }).then(function(data) {
+          window.location.href = `/dashboard/${data}`;
+      // If there's an error, log the error
+      }).catch(function(err) {
+      console.log(err);
+      });
+  }
+
+    // function processLogin() {
   //   console.log('processing login')
   //   event.preventDefault();
   //   var login = $("#username").val().trim();
@@ -26,4 +45,7 @@ $(document).ready(function() {
   //   })
   // }
 
-})
+});
+
+
+
