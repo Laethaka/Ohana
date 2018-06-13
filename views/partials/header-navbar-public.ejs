@@ -1,0 +1,24 @@
+<!-- Family icon and name -->
+<nav class="navbar">
+    <span class="navbar-brand d-flex justify-content-center">
+        <a href="#"><img src="/assets/images/home-2.svg" style="height:40px;width:40px;"></a>
+    </span>
+    <h1 class="yellow-text">FIND AN EVENT</h1>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle"></i> User name
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+            <button class="dropdown-item" id="new-ballot" type="button" data-toggle="modal" data-target="#create-new-ballot">Create Event Ballot</button>
+            <button class="dropdown-item" id="new-dashboard" type="button">Create Family Dashboard</button>
+            <button class="dropdown-item" id="join-dashboard" type="button">Join Dasboard</button>
+            <button class="dropdown-item" id="to-settings" type="button">Settings</button>
+            <button class="dropdown-item" id="logout" type="button">Log out</button>
+        </div>
+        </div>
+</nav>
+
+<div>
+    <% include modal-new-eb %>
+</div>

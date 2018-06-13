@@ -31,19 +31,23 @@
                                 <input type="text" class="form-control" id="zipcode-input" placeholder="Zipcode">
                             </div>
                         </div>
+
+                        
+
                         <!-- row -->
                         <div class="form row">
+                            <label>If you don't have a Ohana Family Dashboard Planner, create one:</label>
                             <div class="form-group col">
                                 <input type="text" class="form-control" id="familyid-input" placeholder="Family ID">
                             </div>
                             <div class="form-check col">
                                 <input type="checkbox" class="form-check-input" id="primUser-input">
-                                <label class="form-check-label" for="exampleInputPassword1">Primary User</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Or do you need to create a new family?  If so, please enter in a nick-name for your family</label>
+                            <label>If you already have one:</label>
                             <input type="text" class="form-control" id="nickName-input" placeholder="Family Nick-Name">
+                            <label class="form-check-label" for="exampleInputPassword1">Primary User</label>
                         </div>
 
                         <div style="display: none" id="alert" class="alert alert-danger" role="alert">
@@ -85,72 +89,72 @@
             }
             else{
                 nick_name = $("input#nickName-input");
-            }
+            } -->
 
 
-            // When the signup button is clicked, we validate the email and password are not blank
-            signUpForm.on("submit", function(event) {
-                event.preventDefault();
-                var userData = {
-                    email: emailInput.val().trim(),
-                    password: passwordInput.val().trim(),
-                    name: nameInput.val().trim(),
-                    age: ageInput.val().trim(),
-                    zipcode: zipcodeInput.val().trim(),
-                    FamilyId: familyInput.val().trim()
-                };
-                if ($('#primUser-input').hasClass('checked')) {
-                    userData.primary_user = true;
-                } else {
-                    userData.primary_user = false;
-                }
+            <!-- // When the signup button is clicked, we validate the email and password are not blank
+    //         signUpForm.on("submit", function(event) {
+    //             event.preventDefault();
+    //             var userData = {
+    //                 email: emailInput.val().trim(),
+    //                 password: passwordInput.val().trim(),
+    //                 name: nameInput.val().trim(),
+    //                 age: ageInput.val().trim(),
+    //                 zipcode: zipcodeInput.val().trim(),
+    //                 FamilyId: familyInput.val().trim()
+    //             };
+    //             if ($('#primUser-input').hasClass('checked')) {
+    //                 userData.primary_user = true;
+    //             } else {
+    //                 userData.primary_user = false;
+    //             }
 
-                if (!userData.email || !userData.password) {
-                    return; //NEED TO ADD NOTICE TO USER
-                }
-                // If we have an email and password, run the signUpUser function
-                signUpUser(userData);
+    //             if (!userData.email || !userData.password) {
+    //                 return; //NEED TO ADD NOTICE TO USER
+    //             }
+    //             // If we have an email and password, run the signUpUser function
+    //             signUpUser(userData);
 
-                emailInput.val("");
-                passwordInput.val("");
-                ageInput.val("");
-                zipcodeInput.val("");
-                nameInput.val("");
-            });
+    //             emailInput.val("");
+    //             passwordInput.val("");
+    //             ageInput.val("");
+    //             zipcodeInput.val("");
+    //             nameInput.val("");
+    //         });
 
-            // Does a post to the signup route. If succesful, we are redirected to the members page
-            // Otherwise we log any errors
-            function signUpUser(input) {
-                $.post("/api/signup", {
-                    email: input.email,
-                    password: input.password,
-                    age: input.age,
-                    zipcode: input.zipcode,
-                    name: input.name,
-                    primary_user: input.primary_user,
-                    familyId: input.FamilyId
-                }).then(function(data) {
-                    console.log(data);
-                    window.location.href = `/`;
-                // If there's an error, handle it by throwing up a boostrap alert
-                // }).catch(handleLoginErr);
-            })
+    //         // Does a post to the signup route. If succesful, we are redirected to the members page
+    //         // Otherwise we log any errors
+    //         function signUpUser(input) {
+    //             $.post("/api/signup", {
+    //                 email: input.email,
+    //                 password: input.password,
+    //                 age: input.age,
+    //                 zipcode: input.zipcode,
+    //                 name: input.name,
+    //                 primary_user: input.primary_user,
+    //                 familyId: input.FamilyId
+    //             }).then(function(data) {
+    //                 console.log(data);
+    //                 window.location.href = `/`;
+    //             // If there's an error, handle it by throwing up a boostrap alert
+    //             // }).catch(handleLoginErr);
+    //         })
 
-            function handleLoginErr(err) {
-                $("#alert .msg").text(err.responseJSON);
-                $("#alert").fadeIn(500);
-            }
-        };
-    function newFamily(nickName){
-        $.post("api/newFamily", {
-            nick_name: nick_name
-        }).then(function(data){
-            console.log(data);
-        })
-    };
+    //         function handleLoginErr(err) {
+    //             $("#alert .msg").text(err.responseJSON);
+    //             $("#alert").fadeIn(500);
+    //         }
+    //     };
+    // function newFamily(nickName){
+    //     $.post("api/newFamily", {
+    //         nick_name: nick_name
+    //     }).then(function(data){
+    //         console.log(data);
+    //     })
+    // };
 
-    });
-    </script> -->
+    // });
+    // </script> -->
   </body>
 
 </html>

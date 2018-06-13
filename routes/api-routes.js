@@ -84,7 +84,17 @@ module.exports = function(app) {
             res.redirect('/')
           }
       })
+    });
+
+  app.post("/api/newFamily", function(req, res){
+      console.log(req.body);
+    db.Family.create({
+        nick_name: req.body.nick_name
+    }).then(function(result){
+        console.log("result from database", result);
+        res.json(result);
     })
+  })
 
     app.get("/api/events", function(req, res) {//WORKS AS OF 6/13 AM
         db.Occasion.findAll({

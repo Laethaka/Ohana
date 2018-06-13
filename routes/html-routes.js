@@ -28,6 +28,15 @@ module.exports = function(app) {
     res.render('pages/register');
   });
 
+
+  // app.get("/family/:nickname", function(req, res) {
+  //   var famName = req.params.nickname;
+  //   console.log("famName " + famName);
+  //   res.render('../views/pages/family',{
+  //     famName: famName
+  //   });
+  // });
+
   // app.get("/family/:nickname", function(req, res) {
   //   var famName = req.params.nickname;
   //   console.log("famName " + famName);
@@ -52,6 +61,11 @@ module.exports = function(app) {
 
   app.get('/login', function(req, res) {
     res.render('../views/pages/login');
+  });
+
+  //PUBLIC PAGE
+  app.get('/dashboard-public', function(req, res) {
+    res.render('../views/pages/dashboard-public');
   });
 
 };
