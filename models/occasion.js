@@ -49,6 +49,16 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.INTEGER,
           isInt: true,
           defaultValue: 1
+      },
+      proposed: {
+          type: DataTypes.BOOLEAN,
+          allowNull: false,
+          defaultValue: true
+      },
+      vote: {
+          type: DataTypes.INTEGER,
+          isInt: true,
+          defaultValue: 0
       }
     });
   
