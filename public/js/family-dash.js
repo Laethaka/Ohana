@@ -72,7 +72,7 @@ $( document ).ready(function() {
         var modal = $(this)
         modal.find('.modal-title').text('New message to ' + recipient)
         modal.find('.modal-body input').val(recipient)
-    })
+      })
 
 
     // Google Places API Address Autocomplete
