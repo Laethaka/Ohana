@@ -52,9 +52,4 @@ module.exports = function(app) {
     res.render('../views/pages/register');
   });
 
-  // Landing Page 
-  app.get('/landing', function(req, res) {
-    res.render('../views/pages/landing');
-  });
-
 };
