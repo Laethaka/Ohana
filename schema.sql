@@ -1,7 +1,7 @@
 -- DROP DATABASE IF EXISTS ohana_db;
 -- CREATE DATABASE ohana_db;
 
-use ohana_db;
+USE ohana_db;
 -- delete from Users;
 -- insert into occasions values
 
