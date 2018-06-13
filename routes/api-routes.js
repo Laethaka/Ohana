@@ -102,7 +102,28 @@ module.exports = function(app) {
         }).then(function(data) {
             res.json(data)
         })
-    })
+    });
+
+    app.get("/api/events/proposed", function(req, res) {//WORKS AS OF 6/13 AM
+        db.Occasion.findAll({
+            where: {
+                proposed: true
+            }
+        }).then(function(data) {
+            res.json(data)
+        });
+    });
+
+    app.get("/api/events/proposed/:userFamId", function(req, res) {//WORKS AS OF 6/13 AM
+        db.Occasion.findAll({
+            where: {
+                proposed: true,
+                FamilyId: req.params.userFamId
+            }
+        }).then(function(data) {
+            res.json(data)
+        });
+    });
 
 
 

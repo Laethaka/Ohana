@@ -30,21 +30,8 @@ $(document).ready(function() {
       password: password
       }).then(function(data) {
           window.location.href = `/dashboard/${data}`;
-      // If there's an error, log the error
-      }).catch(function(err) {
-      console.log(err);
       });
   }
-
-    // function processLogin() {
-  //   console.log('processing login')
-  //   event.preventDefault();
-  //   var login = $("#username").val().trim();
-  //   console.log(login)
-  //   $.post('/api/user' + login).then(function(results) {
-  //   })
-  // }
-
 });
 
 
