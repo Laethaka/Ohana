@@ -62,8 +62,8 @@
         </div>
     </div>
 
-    <!-- <script src="js/register.js" type='text/javascript'></script>
-    <script>
+    <script src="js/register.js" type='text/javascript'></script>
+    <!-- <script>
         $(document).ready(function() {
 
             $('#primUser-input').click(function() {
@@ -85,72 +85,72 @@
             }
             else{
                 nick_name = $("input#nickName-input");
-            }
+            } -->
 
 
-            // When the signup button is clicked, we validate the email and password are not blank
-            signUpForm.on("submit", function(event) {
-                event.preventDefault();
-                var userData = {
-                    email: emailInput.val().trim(),
-                    password: passwordInput.val().trim(),
-                    name: nameInput.val().trim(),
-                    age: ageInput.val().trim(),
-                    zipcode: zipcodeInput.val().trim(),
-                    FamilyId: familyInput.val().trim()
-                };
-                if ($('#primUser-input').hasClass('checked')) {
-                    userData.primary_user = true;
-                } else {
-                    userData.primary_user = false;
-                }
+            <!-- // When the signup button is clicked, we validate the email and password are not blank
+    //         signUpForm.on("submit", function(event) {
+    //             event.preventDefault();
+    //             var userData = {
+    //                 email: emailInput.val().trim(),
+    //                 password: passwordInput.val().trim(),
+    //                 name: nameInput.val().trim(),
+    //                 age: ageInput.val().trim(),
+    //                 zipcode: zipcodeInput.val().trim(),
+    //                 FamilyId: familyInput.val().trim()
+    //             };
+    //             if ($('#primUser-input').hasClass('checked')) {
+    //                 userData.primary_user = true;
+    //             } else {
+    //                 userData.primary_user = false;
+    //             }
 
-                if (!userData.email || !userData.password) {
-                    return; //NEED TO ADD NOTICE TO USER
-                }
-                // If we have an email and password, run the signUpUser function
-                signUpUser(userData);
+    //             if (!userData.email || !userData.password) {
+    //                 return; //NEED TO ADD NOTICE TO USER
+    //             }
+    //             // If we have an email and password, run the signUpUser function
+    //             signUpUser(userData);
 
-                emailInput.val("");
-                passwordInput.val("");
-                ageInput.val("");
-                zipcodeInput.val("");
-                nameInput.val("");
-            });
+    //             emailInput.val("");
+    //             passwordInput.val("");
+    //             ageInput.val("");
+    //             zipcodeInput.val("");
+    //             nameInput.val("");
+    //         });
 
-            // Does a post to the signup route. If succesful, we are redirected to the members page
-            // Otherwise we log any errors
-            function signUpUser(input) {
-                $.post("/api/signup", {
-                    email: input.email,
-                    password: input.password,
-                    age: input.age,
-                    zipcode: input.zipcode,
-                    name: input.name,
-                    primary_user: input.primary_user,
-                    familyId: input.FamilyId
-                }).then(function(data) {
-                    console.log(data);
-                    window.location.href = `/`;
-                // If there's an error, handle it by throwing up a boostrap alert
-                // }).catch(handleLoginErr);
-            })
+    //         // Does a post to the signup route. If succesful, we are redirected to the members page
+    //         // Otherwise we log any errors
+    //         function signUpUser(input) {
+    //             $.post("/api/signup", {
+    //                 email: input.email,
+    //                 password: input.password,
+    //                 age: input.age,
+    //                 zipcode: input.zipcode,
+    //                 name: input.name,
+    //                 primary_user: input.primary_user,
+    //                 familyId: input.FamilyId
+    //             }).then(function(data) {
+    //                 console.log(data);
+    //                 window.location.href = `/`;
+    //             // If there's an error, handle it by throwing up a boostrap alert
+    //             // }).catch(handleLoginErr);
+    //         })
 
-            function handleLoginErr(err) {
-                $("#alert .msg").text(err.responseJSON);
-                $("#alert").fadeIn(500);
-            }
-        };
-    function newFamily(nickName){
-        $.post("api/newFamily", {
-            nick_name: nick_name
-        }).then(function(data){
-            console.log(data);
-        })
-    };
+    //         function handleLoginErr(err) {
+    //             $("#alert .msg").text(err.responseJSON);
+    //             $("#alert").fadeIn(500);
+    //         }
+    //     };
+    // function newFamily(nickName){
+    //     $.post("api/newFamily", {
+    //         nick_name: nick_name
+    //     }).then(function(data){
+    //         console.log(data);
+    //     })
+    // };
 
-    });
-    </script> -->
+    // });
+    // </script> -->
   </body>
 
 </html>

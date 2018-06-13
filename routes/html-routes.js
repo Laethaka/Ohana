@@ -24,13 +24,13 @@ module.exports = function(app) {
     res.render('pages/register');
   });
 
-  app.get("/family/:nickname", function(req, res) {
-    var famName = req.params.nickname;
-    console.log("famName " + famName);
-    res.render('../views/pages/family',{
-      famName: famName
-    });
-  });
+  // app.get("/family/:nickname", function(req, res) {
+  //   var famName = req.params.nickname;
+  //   console.log("famName " + famName);
+  //   res.render('../views/pages/family',{
+  //     famName: famName
+  //   });
+  // });
 
   // app.get("/family/:nickname", function(req, res) {
   //   res.render('pages/landing'
