@@ -1,29 +1,29 @@
-$(document).ready(function() {
+// $(document).ready(function() {
      
-  // debugger;
+//   // debugger;
 
-  $("#loginForm").submit(function(event){
-    event.preventDefault();
+//   $("#loginForm").submit(function(event){
+//     event.preventDefault();
 
-    console.log('ready!')
-  })
+//     console.log('ready!')
+//   })
 
 
-  $('#loginBtn').on("click", function(event){
-    event.preventDefault();
-    var login = $("#username").val().trim();
-    console.log(login)
-    $.post('/api/user' + login).then(function(results) {
-    })
-  });
+//   $('#loginBtn').on("click", function(event){
+//     event.preventDefault();
+//     var login = $("#username").val().trim();
+//     console.log(login)
+//     $.post('/api/user' + login).then(function(results) {
+//     })
+//   });
 
-  // function processLogin() {
-  //   console.log('processing login')
-  //   event.preventDefault();
-  //   var login = $("#username").val().trim();
-  //   console.log(login)
-  //   $.post('/api/user' + login).then(function(results) {
-  //   })
-  // }
+//   // function processLogin() {
+//   //   console.log('processing login')
+//   //   event.preventDefault();
+//   //   var login = $("#username").val().trim();
+//   //   console.log(login)
+//   //   $.post('/api/user' + login).then(function(results) {
+//   //   })
+//   // }
 
-})
+// })

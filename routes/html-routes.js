@@ -47,9 +47,9 @@ module.exports = function(app) {
     });
   });
 
-  // Registration Page
-  app.get('/register', function(req, res) {
-    res.render('../views/pages/register');
-  });
+  // // Registration Page
+  // app.get('/register', function(req, res) {
+  //   res.render('../views/pages/register');
+  // });
 
 };
