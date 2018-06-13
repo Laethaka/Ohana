@@ -8,23 +8,18 @@ module.exports = function(app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-    // So we're sending the user back the route to the members page because the redirect will happen on the front end
-    // They won't get this or even be able to access this page if they aren't authed
-    // console.log("LOGGING IN THIS USER", req.body);
     db.User.findOne({//FINDING USER
         where: {
             email: req.body.email
         }
     }).then(function(result) {
         if (result) {//user found
-        //   console.log('user found:', result)
             db.Family.findOne({//FINDING FAMILY
                 where: {
                     id: result.FamilyId
                 }            
             }).then(function(data) {
-              console.log('family found!')
+            //   console.log('family found!')
               var nickname = data.dataValues.nick_name;
               res.json(nickname)
             })
@@ -64,6 +59,7 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
+        FamilyId: req.user.FamilyId
       });
     }
   });    
@@ -100,6 +96,44 @@ module.exports = function(app) {
         res.json(result);
     })
   })
+
+    app.get("/api/events", function(req, res) {//WORKS AS OF 6/13 AM
+        db.Occasion.findAll({
+        }).then(function(data) {
+            res.json(data)
+        })
+    });
+
+    app.get('/api/events/:userFamId', function(req,res) {
+        db.Occasion.findAll({
+            where: {
+                FamilyId: req.params.userFamId
+            }
+        }).then(function(data) {
+            res.json(data)
+        })
+    });
+
+    app.get("/api/events/proposed", function(req, res) {//WORKS AS OF 6/13 AM
+        db.Occasion.findAll({
+            where: {
+                proposed: true
+            }
+        }).then(function(data) {
+            res.json(data)
+        });
+    });
+
+    app.get("/api/events/proposed/:userFamId", function(req, res) {//WORKS AS OF 6/13 AM
+        db.Occasion.findAll({
+            where: {
+                proposed: true,
+                FamilyId: req.params.userFamId
+            }
+        }).then(function(data) {
+            res.json(data)
+        });
+    });
 };
   
     // app.get(`/api/user/:id`, function(req, res) {
