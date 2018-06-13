@@ -25,7 +25,5 @@ $.get("/api/myevents", function(data) {
       $("#myevents-card-" + i).append("<h5> Created by: " + data[i].username + "</h5>");
     }
   });
-
-  
 });
 
