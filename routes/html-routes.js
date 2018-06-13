@@ -50,4 +50,8 @@ module.exports = function(app) {
   //   res.render('../views/pages/register');
   // });
 
+  app.get('/login', function(req, res) {
+    res.render('../views/pages/login');
+  });
+
 };
