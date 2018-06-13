@@ -34,12 +34,8 @@ module.exports = function(app) {
     })
 });
 
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    // console.log("SIGNING THIS FOOL UP:",req.body);
-    db.User.create({
+    db.User.create({//CREATING ROW IN USERS TABLE
       email: req.body.email,
       password: req.body.password,
       age: req.body.age,
@@ -47,32 +43,24 @@ module.exports = function(app) {
       primary_user: req.body.primary_user,
       name: req.body.name,
       FamilyId: req.body.familyId
-    }).then(function(results) {
-        // console.log(results.dataValues);
+    }).then(function(results) {//REDIRECT USER TO LOGIN PAGE
         res.json('/api/login');
-    // res.end();
     }).catch(function(err) {
       console.log(err);
       res.json(err);
-      // res.status(422).json(err.errors[0].message);
     });
   });
 
-  // Route for logging user out
-  app.get("/logout", function(req, res) {
+  app.get("/logout", function(req, res) {//UNUSED AS OF 6/13 AM
     req.logout();
     res.redirect("/");
   });
 
-  // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function(req, res) {
+  app.get("/api/user_data", function(req, res) {//WORKS AS OF 6/13 AM
     if (!req.user) {
-      // The user is not logged in, send back an empty object
       res.json({});
     }
     else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
         id: req.user.id,
@@ -81,7 +69,6 @@ module.exports = function(app) {
   });    
 
   app.post(`/api/user/:username`, function(req,res) {
-      console.log("HERE IT IS", req.params.username);
       db.User.findOne({//FINDING USER
           where: {
               user_name: req.params.username,
@@ -99,9 +86,8 @@ module.exports = function(app) {
 
               })
           } else {
-              console.log('user not found!')
+            res.redirect('/')
           }
-
       })
     })
 };
