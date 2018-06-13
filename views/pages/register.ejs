@@ -119,16 +119,17 @@
                     familyId: input.FamilyId
                 }).then(function(data) {
                     console.log(data);
-                    // window.location.href = `/family/${data}`;
+                    window.location.href = `/`;
                 // If there's an error, handle it by throwing up a boostrap alert
-                }).catch(handleLoginErr);
-            }
+                // }).catch(handleLoginErr);
+            })
 
             function handleLoginErr(err) {
                 $("#alert .msg").text(err.responseJSON);
                 $("#alert").fadeIn(500);
             }
-        });
+        };
+    });
     </script>
   </body>
 
