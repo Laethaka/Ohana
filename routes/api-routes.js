@@ -79,7 +79,6 @@ module.exports = function(app) {
                   var nickname = data.dataValues.nick_name;
                   console.log(nickname);
                   res.redirect("/family/" + nickname);
-
               })
           } else {
             res.redirect('/')
@@ -125,7 +124,39 @@ module.exports = function(app) {
         });
     });
 
+    app.post('/api/events/voteup', function(req,res) {
+        // console.log('voteup was sent this:',req.body);
+        db.Occasion.increment('vote', {//INCREMENTING VOTE
+            where: {
+                id: req.body.id
+            }
+        }).then(function(data){
+            db.Occasion.findOne({//FINDING ROW WHERE IT JUST INCREMENTED
+                where: {
+                    id: req.body.id
+                }
+            }).then(function(data2) {
+                res.json(data2.dataValues)
+            })
+        });
+    });
 
+    app.post('/api/events/votedown', function(req,res) {
+        // console.log('voteup was sent this:',req.body);
+        db.Occasion.decrement('vote', {//DECREMENTING VOTE
+            where: {
+                id: req.body.id
+            }
+        }).then(function(data){
+            db.Occasion.findOne({//FINDING ROW WHERE IT JUST INCREMENTED
+                where: {
+                    id: req.body.id
+                }
+            }).then(function(data2) {
+                res.json(data2.dataValues)
+            })
+        });
+    });
 
 };
   
