@@ -248,7 +248,14 @@ box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
     z-index: 1051 !important;
 }
 
+.search-dash {
+    margin-bottom: 30px;
+    margin-left: -30px;
+}
 
+.public-label {
+    margin-bottom: 5px;
+}
 
 
 /* csss for landing -check */
