@@ -110,7 +110,6 @@ module.exports = function(app) {
     });
 
   app.post("/api/newFamily", function(req, res){
-    //   console.log(req.body);
     db.Family.create({
         nick_name: req.body.nick_name
     }).then(function(result){
@@ -188,6 +187,22 @@ module.exports = function(app) {
             })
         });
     });
+
+    app.post('/api/newEvent', function(req,res) {
+        console.log('creating event with this:', req.body)
+        db.Occasion.create({
+            title: req.body.title,
+            date: req.body.date,
+            start_time: req.body.start_time,
+            end_time: req.body.end_time,
+            category: req.body.category,
+            description: req.body.description,
+            FamilyId: req.body.FamilyId,
+            location: req.body.location
+        }).then(function(result) {
+            res.json(result);
+        })
+    })
 
     // app.get("/partial/name/:userName", function(req, res){
     //     console.log("in api-routes userName" + req.params.userName);
