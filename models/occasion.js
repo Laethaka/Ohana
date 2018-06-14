@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         notEmpty: true,
         validate: {
-            len: [5, 15]
+            len: [5, 35]
         }
       },
       date: {

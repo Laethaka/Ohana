@@ -64,14 +64,16 @@
         newOccasion.date = 'June 22 2018'; //HARD CODED
         newOccasion.start_time = '11 AM'; //HARD CODED
         newOccasion.end_time = '4 PM'; //HARD CODED
-        // newOccasion.location = $('#event-address').val().trim();
+        newOccasion.location = 'UC Berkeley';
         newOccasion.category = $('#event-category').val().trim();
         newOccasion.description = $('#event-description').val().trim();
 
         $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
             newOccasion.FamilyId = data.FamilyId;
         }).then(function() {
-            console.log(newOccasion)
+            $.post('/api/newEvent', newOccasion).then(function(data) {
+                location.reload();
+            })
         })
     })
 </script>
