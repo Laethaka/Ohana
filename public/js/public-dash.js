@@ -23,6 +23,9 @@ $( document ).ready(function() {
                                 <small>Event Date: ${data[idx].date}</small>
                                 <h5 class="card-title">${data[idx].title}</h5>
                             </span>
+                            <span class="float-right">
+                                <h5 class="text-center"><i class="far fa-bookmark"></i></h5>
+                            </span>
                         </div>
                         <div class="card-body">
                             <span>
