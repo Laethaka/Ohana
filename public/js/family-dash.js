@@ -3,6 +3,12 @@ $( document ).ready(function() {
     var userFamId;
     $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
         userFamId = data.FamilyId;
+        // console.log("data.name", data.name);
+        // userName = data.name;
+
+        // $.get("/partial/name/" + userName, function(data){
+        //     console.log("return in family-dash", data);
+        // });
         // console.log('user fam id:',userFamId)
         $.get(`/api/events/proposed/${userFamId}`, function(data) {
             // console.log('proposed events data:',data)
@@ -60,8 +66,7 @@ $( document ).ready(function() {
                 }
             });
         })
-    })    
-
+    });    
 
     // add new card
     $('#exampleModal').on('show.bs.modal', function (event) {
@@ -74,6 +79,12 @@ $( document ).ready(function() {
         modal.find('.modal-body input').val(recipient)
       })
 
+    $("#logout").on("click", function(){
+        console.log("in logout block after click")
+        $.get("/logout", function(data){
+            window.location.href = "/logout";
+        })
+    });
 
     // Google Places API Address Autocomplete
     var placeSearch, autocomplete;

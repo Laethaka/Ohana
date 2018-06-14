@@ -1,10 +1,10 @@
 <!-- Family icon and name -->
 <nav class="navbar">
-    <h1 class="navbar-brand"> <a href="#"><img src="/assets/images/avocado.svg" style="height:40px;width:40px;"></a> Avocado Family</h1>
+    <h1 class="navbar-brand"> <a href="#"><img src="/assets/images/avocado.svg" style="height:40px;width:40px;"></a> <%= famName %></h1>
 
     <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user-circle"></i> User name
+        <button type="button" class="btn btn-secondary dropdown-toggle" id="nameText" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle"></i> 
         </button>
         <div class="dropdown-menu dropdown-menu-right">
             <button class="dropdown-item" id="new-ballot" type="button" data-toggle="modal" data-target="#create-new-ballot">Create Event Ballot</button>
@@ -19,3 +19,11 @@
 <div>
     <% include modal-new-eb %>
 </div>
+
+<script>
+
+    $.get("/api/user_data", function(data){
+        document.getElementById("nameText").innerText = data.name;
+    });
+
+</script>
