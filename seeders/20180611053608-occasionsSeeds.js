@@ -32,6 +32,20 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
           FamilyId: 1
+        },
+        {
+          category: "party",
+          title: "Project Finished",
+          date: "June 21 2018",
+          start_time: "10 AM",
+          end_time: "2:30 PM",
+          zipcode: "94705",
+          location: 'Spats Bar',
+          description: 'Party tiiiiiiiiiiime',
+          photo: 'fake.jpg',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          FamilyId: 1
         }
       ]
     );
