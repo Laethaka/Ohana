@@ -29,10 +29,12 @@
                             <input id="event-time" type="time" class="form-control" placeholder="00:00PM">
                         </div>
                     </div>
-                    <!-- Location (Google Places Autocomplete) -->         
+                    <!-- Location (Google Places Autocomplete) -->    
                     <div class="form-group">
-                        <input id="autocomplete event-address" placeholder="Enter address"
-                            onFocus="geolocate()" type="text" class="form-control"></input>
+                        <div id="locationField">
+                            <input id="autocomplete" class="event-address form-control" placeholder="Enter address"
+                                    onFocus="geolocate()" type="window.HTMLInputElement"></input>
+                        </div>     
                     </div>
                     <!-- Category -->
                     <div class="form-group">
