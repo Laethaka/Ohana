@@ -13,7 +13,7 @@ $( document ).ready(function() {
                     }
 
                     var eventCard = $(`
-                        <div class="card card-event" id="event-card-family">
+                        <div class="card card-event event-card-family">
                             <div class="card-header">
                                 <span class="float-left">
                                     <small>Event Date: ${data[idx].date}</small>
@@ -30,7 +30,7 @@ $( document ).ready(function() {
                                     <small><i class="far fa-clock"></i>${data[idx].start_time} - ${data[idx].end_time}</small>
                                 </span>
                                 <div class="img-placeholder">${data[idx].photo}</div>
-                                <p class="card-text text-justify">${data[idx].description}</p>
+                                <p class="card-text">${data[idx].description}</p>
                             </div>
                             <div class="card-footer">
                                 <span class="float-left text-muted">
@@ -88,5 +88,8 @@ $( document ).ready(function() {
             window.location.href = "/logout";
         })
     });
+
+
+
 
 });
