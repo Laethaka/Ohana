@@ -156,6 +156,16 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/api/landing/events", function(req, res) {
+        db.Occasion.findAll({
+            where: {
+                proposed: false,
+            }
+        }).then(function(data) {
+            res.json(data)
+        });
+    });
+
     app.post('/api/events/voteup', function(req,res) {
         db.Occasion.increment('vote', {//INCREMENTING VOTE
             where: {
