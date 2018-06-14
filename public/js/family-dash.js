@@ -11,7 +11,7 @@ $( document ).ready(function() {
                     <div class="card shadow card-event">
                         <div class="card-header">
                             <span class="float-left">
-                                <small>Last Updated: ${data[idx].updatedAt}</small>
+                                <small>Event Date: ${data[idx].date}</small>
                                 <h5 class="card-title">${data[idx].title}</h5>
                             </span>
                             <span class="float-right">
@@ -76,42 +76,42 @@ $( document ).ready(function() {
 
 
     // Google Places API Address Autocomplete
-    var placeSearch, autocomplete;
-    var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
-    };
+    // var placeSearch, autocomplete;
+    // var componentForm = {
+    //     street_number: 'short_name',
+    //     route: 'long_name',
+    //     locality: 'long_name',
+    //     administrative_area_level_1: 'short_name',
+    //     country: 'long_name',
+    //     postal_code: 'short_name'
+    // };
 
-    function initAutocomplete() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            (document.getElementById('autocomplete')),
-            {types: ['geocode']});
+    // function initAutocomplete() {
+    //     // Create the autocomplete object, restricting the search to geographical
+    //     // location types.
+    //     autocomplete = new google.maps.places.Autocomplete(
+    //         (document.getElementById('autocomplete')),
+    //         {types: ['geocode']});
 
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
-    }
+    //     // When the user selects an address from the dropdown, populate the address
+    //     // fields in the form.
+    //     autocomplete.addListener('place_changed', fillInAddress);
+    // }
 
-    function geolocate() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var geolocation = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                    var circle = new google.maps.Circle({
-                    center: geolocation,
-                    radius: position.coords.accuracy
-                });
-                autocomplete.setBounds(circle.getBounds());
-            });
-        }
-    }
+    // function geolocate() {
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(function(position) {
+    //             var geolocation = {
+    //                 lat: position.coords.latitude,
+    //                 lng: position.coords.longitude
+    //             };
+    //                 var circle = new google.maps.Circle({
+    //                 center: geolocation,
+    //                 radius: position.coords.accuracy
+    //             });
+    //             autocomplete.setBounds(circle.getBounds());
+    //         });
+    //     }
+    // }
 });
     

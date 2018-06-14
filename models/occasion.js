@@ -24,12 +24,13 @@ module.exports = function(sequelize, DataTypes) {
       },
       end_time: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
           notEmpty: true
       },
       zipcode: {
           type: DataTypes.STRING,
-          isInt: true
+          isInt: true,
+          allowNull: true
       },
       location: {
           type: DataTypes.STRING,

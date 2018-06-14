@@ -31,9 +31,13 @@
                     </div>
                     <!-- Location (Google Places Autocomplete) -->         
                     <div class="form-group">
-                        <input id="autocomplete" placeholder="Enter address"
-                            onFocus="geolocate()" type="text"class="form-control"></input>
-                    </div>                   
+                        <input id="autocomplete event-address" placeholder="Enter address"
+                            onFocus="geolocate()" type="text" class="form-control"></input>
+                    </div>
+                    <!-- Category -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="event-category" placeholder="Add Category">
+                    </div>           
                     <!-- Description -->
                     <div class="form-group">
                         <textarea class="form-control" id="event-description" rows="3" placeholder="Add a description..."></textarea>
@@ -43,9 +47,28 @@
             
             <!-- modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Save</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" id='eventAdderBtn'>Save</button>
             </div>
         </div>
         <!-- end modal content div -->
     </div>
 </div>
+
+<script>
+    $('#eventAdderBtn').off('click').on('click',function(event){//MUST RESET CLICK LISTENER TO FIX BOOTSTRAP DUPLICATION 
+    
+        var newOccasion = {};
+        newOccasion.title = $('#event-title').val().trim();
+        newOccasion.date = $('#event-date').val();
+        newOccasion.start_time = $('#event-time').val();
+        // newOccasion.location = $('#event-address').val().trim();
+        newOccasion.category = $('#event-category').val().trim();
+        newOccasion.description = $('#event-category').val().trim();
+
+        $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
+            newOccasion.FamilyId = data.FamilyId;
+        }).then(function() {
+            console.log(newOccasion)
+        })
+    })
+</script>
