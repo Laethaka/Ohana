@@ -156,7 +156,7 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/landing/events", function(req, res) {
+    app.get("/api/publicDash/events", function(req, res) {
         db.Occasion.findAll({
             where: {
                 proposed: false,
