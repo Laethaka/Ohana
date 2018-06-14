@@ -13,15 +13,20 @@ module.exports = function(app) {
             email: req.body.email
         }
     }).then(function(result) {
+        // console.log("in login api-routes", result.dataValues);
         if (result) {//user found
+            var userInfo = result.dataValues;
             db.Family.findOne({//FINDING FAMILY
                 where: {
                     id: result.FamilyId
                 }            
             }).then(function(data) {
+                // console.log("userInfo", userInfo)
             //   console.log('family found!')
               var nickname = data.dataValues.nick_name;
-              res.json(nickname)
+              userInfo.familyNickName = data.dataValues.nick_name;
+            //   console.log("userInfo with family nick name", userInfo)
+              res.json(userInfo);
             })
         } else {
             console.log('user not found!')
@@ -52,14 +57,32 @@ module.exports = function(app) {
   });
 
   app.get("/api/user_data", function(req, res) {//WORKS AS OF 6/13 AM
+    var familyNickName;
     if (!req.user) {
       res.json({});
     }
     else {
+        // db.Family.findOne({
+        //     where: {
+        //         id: req.user.FamilyId
+        //     }               
+        // }).then(function(data){
+        //     // console.log("in /api/user_data return family nickname", data.dataValues.nick_name);
+        //     // familyNickName = data.dataValues.nick_name;
+        //     res.json({
+        //         email: req.user.email,
+        //         id: req.user.id,
+        //         FamilyId: req.user.FamilyId,
+        //         name: req.user.name,
+        //         familyNickName: data.dataValues.nick_name
+        //       });
+        // })
       res.json({
         email: req.user.email,
         id: req.user.id,
-        FamilyId: req.user.FamilyId
+        FamilyId: req.user.FamilyId,
+        name: req.user.name,
+        // familyNickName: familyNickName
       });
     }
   });    
@@ -87,7 +110,7 @@ module.exports = function(app) {
     });
 
   app.post("/api/newFamily", function(req, res){
-      console.log(req.body);
+    //   console.log(req.body);
     db.Family.create({
         nick_name: req.body.nick_name
     }).then(function(result){
@@ -166,6 +189,16 @@ module.exports = function(app) {
             })
         });
     });
+
+    // app.get("/partial/name/:userName", function(req, res){
+    //     console.log("in api-routes userName" + req.params.userName);
+    //     res.render("/partials/header-navbar", {
+    //         userName: req.params.userName
+    //     }).then(function(data){
+    //         console.log(data);
+    //         res.json(data);
+    //     })
+    // });
 
 };
   

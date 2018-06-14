@@ -29,7 +29,7 @@ $(document).ready(function() {
       email: email,
       password: password
       }).then(function(data) {
-          window.location.href = `/dashboard/${data}`;
+          window.location.href = `/dashboard/` + data.familyNickName;
       });
   }
 });
