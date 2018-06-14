@@ -9,8 +9,8 @@ $(document).ready(function() {
   loginForm.on("submit", function(event) {
       event.preventDefault();
       var userData = {
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim()
+        email: emailInput.val().trim(),
+        password: passwordInput.val().trim()
       };
 
       if (!userData.email || !userData.password) {
@@ -26,10 +26,19 @@ $(document).ready(function() {
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
       $.post("/api/login", {
-      email: email,
-      password: password
+        email: email,
+        password: password
       }).then(function(data) {
+        // console.log("err", err);
+        if(typeof data === "object"){
+          console.log("found user");
           window.location.href = `/dashboard/` + data.familyNickName;
+        }
+        else{
+          console.log("couldn't find user");
+          window.location.href = "/login/";
+          $("#loginErrorMsg").text("Invalid email and/or password.  Please try again or register an account below.")
+        }
       });
   }
 });
