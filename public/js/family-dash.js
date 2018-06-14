@@ -14,7 +14,7 @@ $( document ).ready(function() {
             // console.log('proposed events data:',data)
             for (var idx=0; idx<data.length; idx++) {
                 var eventCard = $(`
-                    <div class="card shadow card-event">
+                    <div class="card card-event">
                         <div class="card-header">
                             <span class="float-left">
                                 <small>Last Updated: ${data[idx].updatedAt}</small>
@@ -69,15 +69,15 @@ $( document ).ready(function() {
     });    
 
     // add new card
-    $('#exampleModal').on('show.bs.modal', function (event) {//EVENT CREATION MODAL
-    var button = $(event.relatedTarget) // Button that triggered the modal
-    var recipient = button.data('whatever') // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $(this)
-    modal.find('.modal-title').text('New message to ' + recipient)
-    modal.find('.modal-body input').val(recipient)
-    });
+    $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New message to ' + recipient)
+        modal.find('.modal-body input').val(recipient)
+      })
 
     $("#logout").on("click", function(){
         console.log("in logout block after click")
@@ -108,23 +108,6 @@ $( document ).ready(function() {
         // fields in the form.
         autocomplete.addListener('place_changed', fillInAddress);
     }
-
-    function geolocate() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var geolocation = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                    var circle = new google.maps.Circle({
-                    center: geolocation,
-                    radius: position.coords.accuracy
-                });
-                autocomplete.setBounds(circle.getBounds());
-            });
-        }
-    }
-
 
 });
     

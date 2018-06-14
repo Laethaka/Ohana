@@ -27,6 +27,15 @@ p {
     line-height: 1.75;
 }
 
+b {
+    font-weight: 700;
+}
+
+.form-check-input {
+    margin: 0.45rem 1rem;
+    
+}
+
 .green-text {
     color: #1bbe10;
 }
@@ -282,3 +291,23 @@ p {
   
 
 
+
+  
+
+  #avatars{
+    width:100%;
+    height: 20%px;
+    overflow-y: auto;
+  }
+  .avatars > input{
+    display: none;
+  }
+  
+  .avatars > input + img{
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  
+  .avatars > input:checked + img{
+    border: 2px solid rgb(39, 13, 182);
+  }
