@@ -7,7 +7,7 @@
             </li>
             <br>
             <li>
-                <a href="#"><img src="/assets/images/avocado.svg"></a>
+                <a id="familyPage" href="#" ><img src="/assets/images/avocado.svg"></a>
             </li>
             <li>
                 <a href="#"><img src="/assets/images/whale.svg"></a>
@@ -26,3 +26,13 @@
 <div>
     <% include modal-new-ds %>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $.get("/api/user_data", function(data){
+            console.log("in navabar.ejs", data);
+            console.log(data.familyNickName);
+        $("#familyPage").attr("href", "/dashboard/" + data.familyNickName);
+    });
+});
+</script>

@@ -13,22 +13,32 @@
                     <br>
 
                         <form class="signup">
-                            <div class="form-group">
+                            <div class="form-group ">
                                 <input type="email" class="form-control" id="email-input" placeholder="Email">
+                                <div id="emailErr" style="color:red;">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" id="password-input" placeholder="Password">
+                                <div id="passwordErr" style="color:red;">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="name-input" placeholder="Name">
+                                <div id="nameErr" style="color:red;">
+                                </div>
                             </div>
                             <!-- row -->
                             <div class="form row">
                                 <div class="form-group col">
                                     <input type="text" class="form-control" id="age-input" placeholder="Age">
+                                    <div id="ageErr" style="color:red;">
+                                    </div>
                                 </div>
                                 <div class="form-group col">
                                     <input type="text" class="form-control" id="zipcode-input" placeholder="Zipcode">
+                                    <div id="zipcodeErr" style="color:red;">
+                                    </div>
                                 </div>
                             </div>
                             <br>
@@ -38,6 +48,12 @@
                                 <div class="col-6">
                                     <label>If you don't have a Ohana Family Planner, create one:</label>
                                     <input type="text" class="form-control" id="nickName-input" placeholder="Enter Family Nick-Name">
+                                    <!-- <div class="btn-group">
+                                        <button type="button" class="btn btn-secondary dropdown-toggle" id="nameText"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-user-circle"></i>
+                                        </button>
+                                        <button id="new-dashboard" type="button" data-toggle="modal" data-target="#create-new-ds">Create Family Dashboard</button>
+                                    </div> -->
                                     <br>
                                     <label class="form-check-label" for="exampleRadios1">Be Primary User</label>
                                     <input type="checkbox" class="form-check-input" id="primUser-input">
@@ -64,7 +80,7 @@
                         </form>
      
                         <div class="text-center">
-                        <a class="d-block small mt-3" href="/">Login Page</a>
+                        <a class="d-block small mt-3" href="/login">Login Page</a>
                         <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
                     </form>
 

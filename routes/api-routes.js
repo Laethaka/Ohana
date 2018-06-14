@@ -7,13 +7,13 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("local"), function(req, res,) {
+      console.log("res", res);
     db.User.findOne({//FINDING USER
         where: {
             email: req.body.email
         }
     }).then(function(result) {
-        // console.log("in login api-routes", result.dataValues);
         if (result) {//user found
             var userInfo = result.dataValues;
             db.Family.findOne({//FINDING FAMILY
@@ -28,10 +28,14 @@ module.exports = function(app) {
             //   console.log("userInfo with family nick name", userInfo)
               res.json(userInfo);
             })
-        } else {
-            console.log('user not found!')
+        } 
+        else {
+            console.log("in else not found user block");
+            res.json({
+                status: "User not found"
+            })
         }
-    })
+    });
 });
 
   app.post("/api/signup", function(req, res) {
@@ -62,28 +66,28 @@ module.exports = function(app) {
       res.json({});
     }
     else {
-        // db.Family.findOne({
-        //     where: {
-        //         id: req.user.FamilyId
-        //     }               
-        // }).then(function(data){
-        //     // console.log("in /api/user_data return family nickname", data.dataValues.nick_name);
-        //     // familyNickName = data.dataValues.nick_name;
-        //     res.json({
-        //         email: req.user.email,
-        //         id: req.user.id,
-        //         FamilyId: req.user.FamilyId,
-        //         name: req.user.name,
-        //         familyNickName: data.dataValues.nick_name
-        //       });
-        // })
-      res.json({
-        email: req.user.email,
-        id: req.user.id,
-        FamilyId: req.user.FamilyId,
-        name: req.user.name,
+        db.Family.findOne({
+            where: {
+                id: req.user.FamilyId
+            }               
+        }).then(function(data){
+            // console.log("in /api/user_data return family nickname", data.dataValues.nick_name);
+            // familyNickName = data.dataValues.nick_name;
+            res.json({
+                email: req.user.email,
+                id: req.user.id,
+                FamilyId: req.user.FamilyId,
+                name: req.user.name,
+                familyNickName: data.dataValues.nick_name
+              });
+        })
+    //   res.json({
+    //     email: req.user.email,
+    //     id: req.user.id,
+    //     FamilyId: req.user.FamilyId,
+    //     name: req.user.name,
         // familyNickName: familyNickName
-      });
+    //   });
     }
   });    
 

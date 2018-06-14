@@ -6,7 +6,11 @@ module.exports = function(sequelize, DataTypes) {
     //   validate: {
     //     len: [5, 40]
     //   }
-    });
+    }
+    // {
+    //   familyZipcode: DataTypes.INTEGER
+    // }
+  );
   
     Family.associate = function(models) {
       // Associating Family with User and Events
