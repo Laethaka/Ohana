@@ -15,6 +15,7 @@ module.exports = {
           location: 'Golden Bear Center, Berkeley',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus mauris at nisl mattis, ut laoreet sem feugiat. Proin in sapien nisi. Mauris purus ante, iaculis a viverra quis.',
           photo: 'fake.jpg',
+          proposed: false,
           createdAt: new Date(),
           updatedAt: new Date(),
           FamilyId: 1
@@ -29,6 +30,7 @@ module.exports = {
           location: 'Lake Tahoe, CA',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus mauris at nisl mattis, ut laoreet sem feugiat. Proin in sapien nisi. Mauris purus ante, iaculis a viverra quis.',
           photo: 'fake.jpg',
+          proposed: false,
           createdAt: new Date(),
           updatedAt: new Date(),
           FamilyId: 1
@@ -66,6 +68,21 @@ module.exports = {
         {
           category: "Outdoor",
           title: "collecting rocks",
+          date: "June 21 2018",
+          start_time: "10 AM",
+          end_time: "4:30 PM",
+          zipcode: "94705",
+          location: 'Muir Beach, CA',
+          description: 'PLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus mauris at nisl mattis, ut laoreet sem feugiat. Proin in sapien nisi. Mauris purus ante, iaculis a viverra quis.',
+          photo: 'fake.jpg',
+          proposed: false,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          FamilyId: 1
+        },
+        {
+          category: "Beach",
+          title: "surfing",
           date: "June 21 2018",
           start_time: "10 AM",
           end_time: "4:30 PM",
