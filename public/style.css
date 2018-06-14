@@ -31,6 +31,11 @@ b {
     font-weight: 700;
 }
 
+.form-check-input {
+    margin: 0.45rem 1rem;
+    
+}
+
 .green-text {
     color: #1bbe10;
 }
