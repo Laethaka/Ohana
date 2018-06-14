@@ -149,6 +149,38 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/api/tally/:userFamId", function(req, res) {
+        // console.log('TALLY API HIT')
+        db.Occasion.findAll({//FINDS ALL PROPOSED EVENTS AND SORTS BY VOTES
+            where: {
+                proposed: true,
+                FamilyId: req.params.userFamId
+            },
+            order: [
+                ['vote', 'DESC']
+            ]
+        }).then(function(data) {
+            var winningId = data[0].dataValues.id; //STORES WINNER ID
+            db.Occasion.update({
+                proposed: false
+            }, {
+                where: {
+                    id: winningId,
+                    FamilyId: req.params.userFamId
+                },
+            }).then(function() {
+                db.Occasion.destroy({
+                    where: {
+                        FamilyId: req.params.userFamId,
+                        proposed: true
+                    }
+                }).then(function() {
+                    res.end();
+                })
+            })
+        });
+    });
+
     app.get("/api/events/proposed/:userFamId", function(req, res) {//WORKS AS OF 6/13 AM
         db.Occasion.findAll({
             where: {
