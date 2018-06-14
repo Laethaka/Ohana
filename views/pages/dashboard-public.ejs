@@ -17,11 +17,14 @@
                 <form>
                     <div class="form-group form-row search-dash">
                         <div class="col-4">
-                            <div id="locationField">
                                 <label class="public-label" style="color: #ffffff;">Search: </label>
-                                <input id="autocomplete" class="event-address form-control" placeholder="Location"
-                                        onFocus="geolocate()" type="window.HTMLInputElement"></input>
-                            </div> 
+                                <div class="form-group">
+                                        <div id="locationField">
+                                            <input id="autocomplete" class="event-address form-control" placeholder="Enter address"
+                                                    onFocus="geolocate()" type="window.HTMLInputElement"></input>
+                                        </div>     
+                                    </div>
+                                <!-- <input id="search-location" type="text" class="form-control" placeholder="Location"> -->
                         </div>
                         <div class="col-4">
                             <label class="public-label" style="color: #ffffff;">From: </label>
@@ -44,7 +47,7 @@
 
     <script type="text/javascript" src="/js/public-dash.js"> </script>
 
-    <script>
+ <script>
             // Google Places API Address Autocomplete
             var placeSearch, autocomplete;
               var componentForm = {
@@ -84,11 +87,10 @@
                 }
               }
         
-        </script>
-
-  
+</script>
+    
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlJvBef51H876ysBXrTe0BW__TGriYsEY&libraries=places&callback=initAutocomplete" async defer></script>
-
+        
 
 </body>
 
