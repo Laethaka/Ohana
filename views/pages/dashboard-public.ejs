@@ -13,8 +13,28 @@
         <div class="margin">
             <% include ../partials/header-navbar-public %>
             <hr>
-            <div class="d-flex justify-content-center">
-                <p class="text-center text-white intro-text-public">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <div class="d-flex">
+                <form>
+                    <div class="form-group form-row search-dash">
+                        <div class="col-4">
+                            <div id="locationField">
+                                <label class="public-label" style="color: #ffffff;">Search: </label>
+                                <input id="autocomplete" class="event-address form-control" placeholder="Location"
+                                        onFocus="geolocate()" type="window.HTMLInputElement"></input>
+                            </div> 
+                        </div>
+                        <div class="col-4">
+                            <label class="public-label" style="color: #ffffff;">From: </label>
+                            <input id="search-date" type="date" class="form-control" placeholder="00/00/00">
+                        </div>
+                        <div class="col-4">
+                            <label class="public-label" style="color: #ffffff;">Until: </label>
+                            <input id="search-date" type="date" class="form-control" placeholder="00/00/00">
+                        </div>
+                    </div>
+                    
+       
+                </form>
             </div>
             <% include ../partials/event-card-public %>
         </div>
@@ -23,6 +43,53 @@
     </div>
 
     <script type="text/javascript" src="/js/public-dash.js"> </script>
+
+    <script>
+            // Google Places API Address Autocomplete
+            var placeSearch, autocomplete;
+              var componentForm = {
+                street_number: 'short_name',
+                route: 'long_name',
+                locality: 'long_name',
+                administrative_area_level_1: 'short_name',
+                country: 'long_name',
+                postal_code: 'short_name'
+              };
+        
+              function initAutocomplete() {
+                // Create the autocomplete object, restricting the search to geographical
+                // location types.
+                autocomplete = new google.maps.places.Autocomplete(
+                    /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+                    {types: ['geocode']});
+        
+                // When the user selects an address from the dropdown, populate the address
+                // fields in the form.
+                // autocomplete.addListener('place_changed', fillInAddress);
+              }
+            
+              function geolocate() {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                    var geolocation = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude
+                    };
+                    var circle = new google.maps.Circle({
+                      center: geolocation,
+                      radius: position.coords.accuracy
+                    });
+                    autocomplete.setBounds(circle.getBounds());
+                  });
+                }
+              }
+        
+        </script>
+
+  
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlJvBef51H876ysBXrTe0BW__TGriYsEY&libraries=places&callback=initAutocomplete" async defer></script>
+
+
 </body>
 
 </html>
