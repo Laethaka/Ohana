@@ -19,29 +19,29 @@ $( document ).ready(function() {
                         <div class="card card-event event-card-family">
                             <div class="card-header">
                                 <span class="float-left">
-                                    <small>Event Date: ${data[idx].date}</small>
+                                    <small>${data[idx].date}</small>
                                     <h5 class="card-title">${data[idx].title}</h5>
                                 </span>
                                 <span class="float-right">
-                                    <small class="text-center">Current Vote Balance: <span id='voteSpan-${data[idx].id}'>${data[idx].vote}</span></small>
+                                    <small class="text-center">Votes · <span id='voteSpan-${data[idx].id}'>${data[idx].vote}</span></small>
                                     <h5 id="heart-vote" data-vote="false" data-id=${data[idx].id} class="text-center heart-icon"><i class="far fa-heart"></i></h5>
                                 </span>
                             </div>
                             <div class="card-body">
                                 <span>
-                                    <small><i class="fas fa-map-marker"></i>${data[idx].location}</small>
-                                    <small><i class="far fa-clock"></i>${data[idx].start_time} - ${data[idx].end_time}</small>
+                                    <small><i class="fas fa-map-marker"></i> ${data[idx].location}</small>
+                                    <small><i class="fas fa-clock"></i> ${data[idx].start_time} - ${data[idx].end_time}</small>
                                 </span>
                                 <div class="img-placeholder">${data[idx].photo}</div>
                                 <p class="card-text">${data[idx].description}</p>
                             </div>
                             <div class="card-footer">
                                 <span class="float-left text-muted">
-                                    <small>Families attending:</small>
+                                    <small>Families attending · </small>
                                     <small>${data[idx].num_families}</small>
                                 </span>
                                 <span class="float-right text-muted">
-                                    <small>Event Category:</small>
+                                    <small>Category · </small>
                                     <small>${data[idx].category}</small>
                                 </span>
                             </div>

@@ -55,13 +55,18 @@ b {
 }
 
 .margin {
-    margin-left: 7rem;
+    margin-left: 8.8rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
 }
 
 .members-margin {
     margin-right: 1rem;
+}
+
+.button-margin-add {
+    margin-left: 1rem;
+    
 }
 
 
