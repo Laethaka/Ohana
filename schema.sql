@@ -6,6 +6,7 @@ USE ohana_db;
 -- insert into occasions values
 
 -- select * from families;
+select * from occasions;
 
 -- select * from Users;
 

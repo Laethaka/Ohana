@@ -29,15 +29,17 @@
                             <input id="event-time" type="time" class="form-control" placeholder="00:00PM">
                         </div>
                     </div>
-                    <!-- Location (Google Places Autocomplete) -->         
+                    <!-- Location (Google Places Autocomplete) -->    
                     <div class="form-group">
-                        <input id="autocomplete" placeholder="Enter address"
-                            onFocus="geolocate()" type="text"class="form-control"></input>
+                        <div id="locationField">
+                            <input id="autocomplete" class="event-address form-control" placeholder="Enter address"
+                                    onFocus="geolocate()" type="window.HTMLInputElement"></input>
+                        </div>     
                     </div>
                     <!-- Category -->
                     <div class="form-group">
-                        <input type="text" class="form-control" id="event-title" placeholder="Add Category">
-                    </div>                
+                        <input type="text" class="form-control" id="event-category" placeholder="Add Category">
+                    </div>           
                     <!-- Description -->
                     <div class="form-group">
                         <textarea class="form-control" id="event-description" rows="3" placeholder="Add a description..."></textarea>
@@ -47,9 +49,33 @@
             
             <!-- modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Save</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" id='eventAdderBtn'>Save</button>
             </div>
         </div>
         <!-- end modal content div -->
     </div>
 </div>
+
+<script>
+    $('#eventAdderBtn').off('click').on('click',function(event){//MUST RESET CLICK LISTENER TO FIX BOOTSTRAP DUPLICATION 
+    
+        event.preventDefault();
+
+        var newOccasion = {};
+        newOccasion.title = $('#event-title').val().trim();
+        newOccasion.date = 'June 22 2018'; //HARD CODED
+        newOccasion.start_time = '11 AM'; //HARD CODED
+        newOccasion.end_time = '4 PM'; //HARD CODED
+        newOccasion.location = 'UC Berkeley';
+        newOccasion.category = $('#event-category').val().trim();
+        newOccasion.description = $('#event-description').val().trim();
+
+        $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
+            newOccasion.FamilyId = data.FamilyId;
+        }).then(function() {
+            $.post('/api/newEvent', newOccasion).then(function(data) {
+                location.reload();
+            })
+        })
+    })
+</script>

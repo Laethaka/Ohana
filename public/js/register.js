@@ -72,14 +72,7 @@ function signUpUser(input) {
     }).then(function(data) {
         console.log(data);
         window.location.href = `/login`;
-    // If there's an error, handle it by throwing up a boostrap alert
-    // }).catch(handleLoginErr);
     })
-
-    // function handleLoginErr(err) {
-    //     $("#alert .msg").text(err.responseJSON);
-    //     $("#alert").fadeIn(500);
-    // }
 };
 function newFamily(nick_name, userData){
     console.log("User Data in newFamily function", userData);
