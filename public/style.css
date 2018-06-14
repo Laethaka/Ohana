@@ -43,7 +43,7 @@ b {
 }
 
 .green-text {
-    color: #1bbe10;
+    color: #71d81b;
 }
 
 .white-text {
@@ -105,29 +105,52 @@ box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 }
   
 
+
+
 .card {
     border: 0px;
     border-radius: 0.7em;
+    width: 33%;
+}
+
+.card-deck {
+    width: 100%;
 }
 
 .card-header {
     border-radius: 0.7em;
 }
 
-#event-card-public .card-header {
+
+.event-card-public > .card-header {
     background-image: linear-gradient(15deg, #ffa200 0%, #fec810 100%);
-    background-color:#fec810;
+    
     border-radius: 0.7em 0.7rem 0em 0rem;
     border-bottom: 0px;
 }
 
+.event-card-family > .card-header {
+    background-image: linear-gradient(15deg, #71d81b 0%, #ffdb1d 100%);
+    border-radius: 0.7em 0.7rem 0em 0rem;
+    border-bottom: 0px;
+}
 
 .card-footer {
     border-radius: 0.7em;
 }
 
-#event-card-public .card-footer {
+.row {
+    margin-bottom: 2rem;
+}
+
+.event-card-public > .card-footer {
     background-image: linear-gradient(15deg, #fec810  0%, #ffa200 100%);
+    border-radius: 0em 0rem 0.7em 0.7rem;
+    border-top: 0px;
+}
+
+.event-card-family > .card-footer {
+    background-image: linear-gradient(15deg, #71d81b 0%, #ffdb1d 100%);
     border-radius: 0em 0rem 0.7em 0.7rem;
     border-top: 0px;
 }
@@ -155,25 +178,29 @@ box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 
 .ballot-box {
     background-color: transparent;
+    width: 90vw;
 }
 
 #event-ballot {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    width: 90vw;
 }
 
 
 .card-event {
-    width: 30%;
+    width: 21rem;
     box-shadow: 0px 0px 41px -6px rgba(0,0,0,0.75);
 }
+
+
 
 .card-empty {
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.483);
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
+    width: 21rem;
     box-shadow: none;
+    flex: none;
 }
 
 .pointer {
@@ -221,9 +248,8 @@ box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
     z-index: 1051 !important;
 }
 
-.event-address {
-    width: 100%;
-}
+
+
 
 /* csss for landing -check */
 

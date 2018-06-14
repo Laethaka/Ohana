@@ -17,7 +17,7 @@ $( document ).ready(function() {
                 }
 
                 var eventCard = $(`
-                    <div class="card card-event" id='event-card-public'>
+                    <div class="card card-event event-card-public">
                         <div class="card-header">
                             <span class="float-left">
                                 <small>Event Date: ${data[idx].date}</small>
