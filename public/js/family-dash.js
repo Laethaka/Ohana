@@ -8,7 +8,7 @@ $( document ).ready(function() {
             // console.log('proposed events data:',data)
             for (var idx=0; idx<data.length; idx++) {
                 var eventCard = $(`
-                    <div class="card shadow card-event">
+                    <div class="card card-event">
                         <div class="card-header">
                             <span class="float-left">
                                 <small>Event Date: ${data[idx].date}</small>
@@ -98,20 +98,5 @@ $( document ).ready(function() {
     //     autocomplete.addListener('place_changed', fillInAddress);
     // }
 
-    // function geolocate() {
-    //     if (navigator.geolocation) {
-    //         navigator.geolocation.getCurrentPosition(function(position) {
-    //             var geolocation = {
-    //                 lat: position.coords.latitude,
-    //                 lng: position.coords.longitude
-    //             };
-    //                 var circle = new google.maps.Circle({
-    //                 center: geolocation,
-    //                 radius: position.coords.accuracy
-    //             });
-    //             autocomplete.setBounds(circle.getBounds());
-    //         });
-    //     }
-    // }
 });
     
