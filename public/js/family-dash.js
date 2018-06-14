@@ -97,6 +97,4 @@ $( document ).ready(function() {
     //     // fields in the form.
     //     autocomplete.addListener('place_changed', fillInAddress);
     // }
-
 });
-    

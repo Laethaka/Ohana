@@ -57,13 +57,16 @@
 <script>
     $('#eventAdderBtn').off('click').on('click',function(event){//MUST RESET CLICK LISTENER TO FIX BOOTSTRAP DUPLICATION 
     
+        event.preventDefault();
+
         var newOccasion = {};
         newOccasion.title = $('#event-title').val().trim();
-        newOccasion.date = $('#event-date').val();
-        newOccasion.start_time = $('#event-time').val();
+        newOccasion.date = 'June 22 2018'; //HARD CODED
+        newOccasion.start_time = '11 AM'; //HARD CODED
+        newOccasion.end_time = '4 PM'; //HARD CODED
         // newOccasion.location = $('#event-address').val().trim();
         newOccasion.category = $('#event-category').val().trim();
-        newOccasion.description = $('#event-category').val().trim();
+        newOccasion.description = $('#event-description').val().trim();
 
         $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
             newOccasion.FamilyId = data.FamilyId;
