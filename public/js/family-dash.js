@@ -5,11 +5,12 @@ $( document ).ready(function() {
             var userFamId = data.FamilyId;
 
             $.get(`/api/events/proposed/${userFamId}`, function(data) {//GETTING ALL EVENTS FOR THIS USER'S FAM
-                var rowIdx = -1;    
+                var rowIdx = 0;
+                var cardIdx = 1;    
                 for (var idx=0; idx<data.length; idx++) {
-                    if (idx%4===0) {//STARTING NEW ROW
+                    if (cardIdx%4===0) {//STARTING NEW ROW
                         rowIdx++;
-                        $('.card-deck').prepend($(`<div id='row-${rowIdx}' class='row'>`));
+                        $('.card-deck').append($(`<div id='row-${rowIdx}' class='row'>`));
                     }
 
                     var eventCard = $(`
@@ -44,8 +45,9 @@ $( document ).ready(function() {
                             </div>
                         </div>
                     `);
+                    // console.log('appending', eventCard)
                     $(`#row-${rowIdx}`).append(eventCard);
-                    
+                    cardIdx++;
                 }//END OF FOR LOOP 
                 $(".heart-icon").on("click", function() {//CHANGING HEART COLOR
                     var eventId = $(this).attr('data-id');
