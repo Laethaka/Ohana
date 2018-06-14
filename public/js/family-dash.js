@@ -1,16 +1,18 @@
 // On page load
 $( document ).ready(function() {
+    var userFamId;
+
     function populateCards() {
-        // $('.card-deck').empty();
         $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
-            var userFamId = data.FamilyId;
+            userFamId = data.FamilyId;
 
             $.get(`/api/events/proposed/${userFamId}`, function(data) {//GETTING ALL EVENTS FOR THIS USER'S FAM
-                var rowIdx = -1;    
+                var rowIdx = 0;
+                var cardIdx = 1;    
                 for (var idx=0; idx<data.length; idx++) {
-                    if (idx%4===0) {//STARTING NEW ROW
+                    if (cardIdx%4===0) {//STARTING NEW ROW
                         rowIdx++;
-                        $('.card-deck').prepend($(`<div id='row-${rowIdx}' class='row'>`));
+                        $('.card-deck').append($(`<div id='row-${rowIdx}' class='row'>`));
                     }
 
                     var eventCard = $(`
@@ -45,8 +47,9 @@ $( document ).ready(function() {
                             </div>
                         </div>
                     `);
+                    // console.log('appending', eventCard)
                     $(`#row-${rowIdx}`).append(eventCard);
-                    
+                    cardIdx++;
                 }//END OF FOR LOOP 
                 $(".heart-icon").on("click", function() {//CHANGING HEART COLOR
                     var eventId = $(this).attr('data-id');
@@ -81,7 +84,14 @@ $( document ).ready(function() {
         var modal = $(this)
         modal.find('.modal-title').text('New message to ' + recipient)
         modal.find('.modal-body input').val(recipient)
-      })
+    });
+
+    $('#tallyBtn').on('click', function() {
+        console.log('tallying with ', userFamId)
+        $.get(`/api/tally/${userFamId}`).then(function() {
+            window.location.href = "/dashboard-public";
+        })
+    })
 
     $("#logout").on("click", function(){
         console.log("in logout block after click")
