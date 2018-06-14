@@ -1,7 +1,6 @@
 // On page load
 $( document ).ready(function() {
     function populateCards() {
-        // $('.card-deck').empty();
         $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
             var userFamId = data.FamilyId;
 
@@ -14,7 +13,7 @@ $( document ).ready(function() {
                     }
 
                     var eventCard = $(`
-                        <div class="card card-event">
+                        <div class="card card-event" id="event-card-family">
                             <div class="card-header">
                                 <span class="float-left">
                                     <small>Event Date: ${data[idx].date}</small>
