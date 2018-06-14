@@ -186,7 +186,10 @@ module.exports = function(app) {
             where: {
                 proposed: true,
                 FamilyId: req.params.userFamId
-            }
+            },
+            order: [
+                [`id`, 'desc']
+            ]
         }).then(function(data) {
             res.json(data)
         });
@@ -196,7 +199,10 @@ module.exports = function(app) {
         db.Occasion.findAll({
             where: {
                 proposed: false,
-            }
+            },
+            order: [
+                [`id`, 'desc']
+            ]
         }).then(function(data) {
             res.json(data)
         });
