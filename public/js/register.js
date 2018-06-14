@@ -14,14 +14,6 @@ $(document).ready(function() {
     var primUserInput = $("input#primUser-input");
     var familyInput = 0;
     var nick_name = "";
-    // if ($("input#familyid-input")){
-    //     familyInput = $("input#familyid-input");
-    // }
-    // else{
-    //     nick_name = $("input#nickName-input").val().trim();
-    //     console.log(nick_name);
-    // }
-
 
     // When the signup button is clicked, we validate the email and password are not blank
     signUpForm.on("submit", function(event) {
@@ -46,22 +38,19 @@ $(document).ready(function() {
             userData.primary_user = false;
         }
 
-        if (!userData.email || !userData.password) {
-            return; //NEED TO ADD NOTICE TO USER
-        }
-        console.log("Family ID ", userData.FamilyId)
-        // if(!$("#input#familyid-input") && $("input#nickName-input")){
-        if (userData.FamilyId === 0){
-            nick_name = $("input#nickName-input").val().trim();
-            console.log(nick_name);
-            newFamily(nick_name, userData);
-        }
-        else{
-            signUpUser(userData);
-        }
-        // If we have an email and password, run the signUpUser function
-
-
+        if(inputVal(userData) === true){
+            console.log("in create block");
+            debugger;
+            if (userData.FamilyId === 0){
+                nick_name = $("input#nickName-input").val().trim();
+                // console.log(nick_name);
+                newFamily(nick_name, userData);
+            }
+            else{
+                signUpUser(userData);
+            }
+        };
+        
         emailInput.val("");
         passwordInput.val("");
         ageInput.val("");
@@ -96,5 +85,38 @@ function newFamily(nick_name, userData){
         signUpUser(userData);
     })
 };
+
+function inputVal(userData){
+    $("#passwordErr").empty();
+    $("#nameErr").empty();
+    $("#zipcodeErr").empty();
+    $("#ageErr").empty();
+    var isValid = true;
+
+    if(userData.password.length < 5 || userData.password.length > 15){
+        isValid = false;
+        $("#passwordErr").text("Error: Password must be between 5 and 15 characters");
+    }
+    if(userData.name.length < 3 || userData.name.length > 30){
+        isValid = false;
+        $("#nameErr").text("Error: Name must be between 5 and 30 characters");
+    }
+    if(!Number.isInteger(parseInt(userData.zipcode))){
+        isValid = false;
+        $("#zipcodeErr").text("Error: Zipcode is not in a valid format(only numbers)");
+    }
+    if(!Number.isInteger(parseInt(userData.age))){
+        isValid = false;
+       $("#ageErr").text("Error: Age is not in a valid format(only numbers)");
+    }
+    
+    emailInput.val("");
+    passwordInput.val("");
+    ageInput.val("");
+    zipcodeInput.val("");
+    nameInput.val("");
+    return isValid;
+};
+
 
 });

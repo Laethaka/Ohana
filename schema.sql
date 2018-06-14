@@ -5,6 +5,7 @@ USE ohana_db;
 -- delete from Users;
 -- insert into occasions values
 
+-- select * from families;
 select * from occasions;
 
 -- select * from Users;

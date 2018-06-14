@@ -16,7 +16,11 @@ module.exports = function(app) {
     if (req.user) {
       res.render('pages/dashboard')
     }
-    res.render('pages/login');
+    else{
+      console.log(res);
+      res.render('pages/login');
+      // res.json("invalid sign in");
+    }
   });
   // Register Page
   app.get("/register", function(req, res) {
