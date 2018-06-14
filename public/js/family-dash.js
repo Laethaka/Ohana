@@ -1,8 +1,10 @@
 // On page load
 $( document ).ready(function() {
+    var userFamId;
+
     function populateCards() {
         $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
-            var userFamId = data.FamilyId;
+            userFamId = data.FamilyId;
 
             $.get(`/api/events/proposed/${userFamId}`, function(data) {//GETTING ALL EVENTS FOR THIS USER'S FAM
                 var rowIdx = 0;
@@ -82,7 +84,14 @@ $( document ).ready(function() {
         var modal = $(this)
         modal.find('.modal-title').text('New message to ' + recipient)
         modal.find('.modal-body input').val(recipient)
-      })
+    });
+
+    $('#tallyBtn').on('click', function() {
+        console.log('tallying with ', userFamId)
+        $.get(`/api/tally/${userFamId}`).then(function() {
+            window.location.href = "/dashboard-public";
+        })
+    })
 
     $("#logout").on("click", function(){
         console.log("in logout block after click")
