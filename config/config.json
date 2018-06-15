@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "Vtecerh22a",
     "database": "ohana_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -14,10 +14,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "nkmk7cvuar8r4bm5",
+    "password": "hlr2v74wkfxowfjs",
+    "database": "kz5rsk6wyw3a9y8j",
+    "host": "g3v9lgqa8h5nq05o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "use_env_variable": "JAWSDB_URL"
   }
 }
