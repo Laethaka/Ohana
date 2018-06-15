@@ -2,11 +2,11 @@
 -- CREATE DATABASE ohana_db;
 
 USE ohana_db;
--- delete from occasions;
+-- delete from families;
 -- insert into occasions values
 
+select * from users;
 -- select * from families;
-select * from occasions;
 
 -- select * from Users;
 

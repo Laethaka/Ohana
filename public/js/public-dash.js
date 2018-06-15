@@ -32,7 +32,7 @@ $( document ).ready(function() {
                                 <small><i class="fas fa-map-marker"></i> ${data[idx].location}</small>
                                 <small><i class="fas fa-clock"></i> ${data[idx].start_time} - ${data[idx].end_time}</small>
                             </span>
-                            <div class="img-placeholder">${data[idx].photo}</div>
+                            <div class="img-placeholder"><img src="${data[idx].photo}" height="100%" width="100%"/></div>
                             <p class="card-text">${data[idx].description}</p>
                         </div>
                         <div class="card-footer">
