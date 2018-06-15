@@ -181,6 +181,19 @@ module.exports = function(app) {
         });
     });
 
+    app.get('/api/bookmark/:id',function(req,res) {
+        db.Occasion.update({
+            proposed: true,
+            vote: 0
+        },{
+            where: {
+                id: req.params.id
+            }
+        }).then(function() {
+            res.end();
+        })
+    });
+
     app.get("/api/events/proposed/:userFamId", function(req, res) {//WORKS AS OF 6/13 AM
         db.Occasion.findAll({
             where: {
@@ -241,12 +254,19 @@ module.exports = function(app) {
     });
 
     var photoArr = [
-        '/assets/images/adventure-backlit-community-207896.jpg',
-        '/assets/images/action-adult-adventure-701016.jpg',
-        '/assets/images/action-boys-dawn-620530.jpg',
-        '/assets/images/adult-boy-child-325521.jpg',
-        '/assets/images/adventure-camp-camping-699558.jpg',
-        '/assets/images/buenavista-surf-camp-enjoyment-friendship-690746.jpg',        
+        '/assets/images/action-activity-balls-296302-01.png',
+        '/assets/images/action-adult-adventure-701016-01.png',
+        '/assets/images/action-boys-dawn-620530-01.png',
+        '/assets/images/activity-art-art-class-730807-01.png',
+        '/assets/images/activity-beauty-blue-61129-01.png',
+        '/assets/images/adult-adventure-casual-669007-01.png',        
+        '/assets/images/adult-boy-child-325521-01.png',        
+        '/assets/images/adventure-backlit-community-207896-01.png',        
+        '/assets/images/adventure-camp-camping-699558-01.png',        
+        '/assets/images/adventure-clouds-daylight-130111-01.png',        
+        '/assets/images/affection-beach-care-433502-01.png',        
+        '/assets/images/backpack-clouds-cloudy-sky-771079-01.png',        
+        '/assets/images/buenavista-surf-camp-enjoyment-friendship-690746-01.png',        
     ]
 
     app.post('/api/newEvent', function(req,res) {

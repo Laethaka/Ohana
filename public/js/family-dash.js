@@ -67,9 +67,9 @@ $( document ).ready(function() {
                         $.post('/api/events/votedown', {id: eventId}).then(function(data) {//DECREMENTING VOTE AND CHANGING SPAN
                             $(`#voteSpan-${data.id}`).text(data.vote)
                         })
-                    }
+                    };
                 });
-            })
+            });
         });
     }; //CARD POPULATION END   
     

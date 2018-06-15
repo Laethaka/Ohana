@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
     $("#logout").on("click", function(){
-        console.log("in logout block after click")
+        // console.log("in logout block after click")
         $.get("/logout", function(data){
             window.location.href = "/logout";
         })
@@ -24,7 +24,7 @@ $( document ).ready(function() {
                                 <h5 class="card-title">${data[idx].title}</h5>
                             </span>
                             <span class="float-right">
-                                <h5 class="text-center"><i class="far fa-bookmark"></i></h5>
+                                <h5 class="text-center"><i class="far fa-bookmark" data-id=${data[idx].id}></i></h5>
                             </span>
                         </div>
                         <div class="card-body">
@@ -48,8 +48,14 @@ $( document ).ready(function() {
                     </div>
                 `);
                 $(`#row-${rowIdx}`).append(eventCard);
-
-            };
+            };//END OF FOR LOOP
+            $('.fa-bookmark').on('click', function() {
+                var eventId = $(this).attr('data-id')
+                $.get(`/api/bookmark/${eventId}`, function() {
+                    console.log('page now reloads!')
+                    window.location.href = "/dashboard/devgroup"; //HARDCODED
+                })
+            })
         });
     }; //CARD POPULATION END   
     
