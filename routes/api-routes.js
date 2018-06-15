@@ -150,7 +150,6 @@ module.exports = function(app) {
     });
 
     app.get("/api/tally/:userFamId", function(req, res) {
-        // console.log('TALLY API HIT')
         db.Occasion.findAll({//FINDS ALL PROPOSED EVENTS AND SORTS BY VOTES
             where: {
                 proposed: true,

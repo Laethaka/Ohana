@@ -33,18 +33,18 @@
                     <!-- DTime -->
                     <div class="form-group form-row">
                         <div class="col-6">
-                            <label for="">Finish</label>
-                            <input id="uniqueEndId" type="time" class="form-control" placeholder="00:00PM">
+                            <label for="">Start</label>
+                            <input id="uniqueStartId" type="time" class="form-control" placeholder="00:00PM">
                         </div>
                         <div class="col-6">
-                            <label for="">Start</label>
-                            <input id="uniqueStartId" type="time" class="form-control" placeholder="00:00AM">
+                            <label for="">Finish</label>
+                            <input id="uniqueEndId" type="time" class="form-control" placeholder="00:00AM">
                         </div>
                     </div>
                     <!-- Location (Google Places Autocomplete) -->    
                     <div class="form-group">
                         <div id="locationField">
-                            <input id="autocomplete uniqueLocId" class="event-address form-control" placeholder="Enter address"
+                            <input id="autocomplete" class="event-address form-control uniqueLocId" placeholder="Enter address"
                                     onFocus="geolocate()" type="window.HTMLInputElement"></input>
                         </div>     
                     </div>
@@ -75,7 +75,7 @@
         newOccasion.date = $('#uniqueDateId').val();
         newOccasion.start_time = $('#uniqueStartId').val();
         newOccasion.end_time = $('#uniqueEndId').val();
-        newOccasion.location = 'UC Berkeley'
+        newOccasion.location = $('.uniqueLocId').val();
         newOccasion.category = $('#event-category').val().trim();
         newOccasion.description = $('#event-description').val().trim();
 
