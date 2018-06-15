@@ -181,6 +181,19 @@ module.exports = function(app) {
         });
     });
 
+    app.get('/api/bookmark/:id',function(req,res) {
+        db.Occasion.update({
+            proposed: true,
+            vote: 0
+        },{
+            where: {
+                id: req.params.id
+            }
+        }).then(function() {
+            res.end();
+        })
+    });
+
     app.get("/api/events/proposed/:userFamId", function(req, res) {//WORKS AS OF 6/13 AM
         db.Occasion.findAll({
             where: {
