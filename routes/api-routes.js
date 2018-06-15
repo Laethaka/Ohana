@@ -240,6 +240,15 @@ module.exports = function(app) {
         });
     });
 
+    var photoArr = [
+        '/assets/images/adventure-backlit-community-207896.jpg',
+        '/assets/images/action-adult-adventure-701016.jpg',
+        '/assets/images/action-boys-dawn-620530.jpg',
+        '/assets/images/adult-boy-child-325521.jpg',
+        '/assets/images/adventure-camp-camping-699558.jpg',
+        '/assets/images/buenavista-surf-camp-enjoyment-friendship-690746.jpg',        
+    ]
+
     app.post('/api/newEvent', function(req,res) {
         console.log('creating event with this:', req.body)
         db.Occasion.create({
@@ -250,7 +259,8 @@ module.exports = function(app) {
             category: req.body.category,
             description: req.body.description,
             FamilyId: req.body.FamilyId,
-            location: req.body.location
+            location: req.body.location,
+            photo: photoArr[Math.floor(Math.random()*photoArr.length)] //HARDCODING
         }).then(function(result) {
             res.json(result);
         })
