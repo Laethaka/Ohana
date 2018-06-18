@@ -29,7 +29,7 @@ For convenience, a calendar drop down and location auto-fill option(using google
 
 After clicking the "Save" button, the event suggestion is added to your "Event Ballot" with all of the details:
 
-<a href="https://imgflip.com/i/2cf13b"><img src="https://i.imgflip.com/2cf13b.jpg" title="made at imgflip.com"/></a>
+<a href="https://imgflip.com/i/2cf1or"><img src="https://i.imgflip.com/2cf1or.jpg" title="made at imgflip.com"/></a>
 
 Once all suggestions have been created, members of the family can vote on any or all suggested events by clicking on the heart symbol underneath the Votes icon:
 
