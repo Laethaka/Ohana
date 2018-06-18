@@ -16,7 +16,7 @@ Ohana is an app targetted to families that would like to organize family time ev
 
 
 
-### How to use
+### How does it work?
 
 After creating a Family, account and signing in, you will be directed to your Family Dashboard page.  At this point, click on the "+" field to create a new event suggestion:
 
@@ -44,4 +44,6 @@ However, if a family member sees an event on the Public Dashboard that they woul
 <a href="https://imgflip.com/gif/2cf1gw"><img src="https://i.imgflip.com/2cf1gw.gif" title="made at imgflip.com"/></a>
 
 
+## Dependecies
 
+<a href="https://imgflip.com/i/2cf1mu"><img src="https://i.imgflip.com/2cf1mu.jpg" title="made at imgflip.com"/></a>
