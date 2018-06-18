@@ -12,7 +12,7 @@ Ohana is an app targetted to families that would like to organize family time ev
 
   * Feel free to visit a deployed version at https://ohana-families.herokuapp.com/ ,
   
-     ### *or*
+     #### _or_
   
   * After cloning, simply type "npm install" to download the required dependencies
     * Navigate to the root folder and type "node server.js" to initiate a local server connection
