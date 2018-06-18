@@ -17,7 +17,7 @@ Ohana is an app targetted for families that would like to organize family time/g
   
      #### _or_
   
-  * After cloning from gihub
+  * After cloning from github
     * type "npm install" to download the required dependencies(listed below)
     * Navigate to the root folder and type "node server.js" to initiate a local server connection
     * In a browser window, navigate to "localhost:3344"
