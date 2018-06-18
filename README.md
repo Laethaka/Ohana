@@ -2,7 +2,7 @@
 ---------------------------
 <a href="https://imgflip.com/i/2cf0rr"><img src="https://i.imgflip.com/2cf0rr.jpg" title="made at imgflip.com"/></a>
 
-Ohana is an app targetted to families that would like to organize family time events. It allows the creation of a family event by date and time, suggestions of things to do by all of those in the family, and provide a methood of family members to vote on any and all suggestions.  Not sure what to suggest?  No problem.  Our Public Dashboard of other family events can be used to generate ideas for your family event, or you can even grab that specific event and make it a suggestion for yours.  If you wish, you can even contact the original family and inquire about joining them.  The main purpose is to give a voice to all family or friend members on how they would like to spend time together.  Ohana will help achieve that and make sure that no one is left behind!!!
+Ohana is an app targetted for families that would like to organize family time/gathering events. It allows the creation of a family event by date and time, suggestions of things to do by all of those in the family, and provide a methood of family members to vote on any and all suggestions.  Not sure what to suggest?  No problem.  Our Public Dashboard of other family events can be used to generate ideas for your family event, or you can even grab that specific event and make it a suggestion for yours.  If you wish, you can even contact the original family and inquire about joining them.  The main purpose is to give a voice to all family or friend members on how they would like to spend time together.  Ohana will help achieve that and make sure that no one is left behind!!!
 
 ## Motivation
 
@@ -55,3 +55,29 @@ However, if a family member sees an event on the Public Dashboard that they woul
 ## Dependecies
 
 <a href="https://imgflip.com/i/2cf1mu"><img src="https://i.imgflip.com/2cf1mu.jpg" title="made at imgflip.com"/></a>
+
+## Future Developments
+
+ * Update authentication and Family + User creation to align better with conventional standards
+ * Give only Primary Users the ability to create Event Ballots(date + times of events to be filled in by family suggestion events)
+ * Section on Family Dashboard page displaying all future events
+ * Email notification for new events, new event proposals, family member addition requests, invitation to join family
+ * Allow users to be a part of multiple Families and view their corresponding dashboards
+ * Add a weight system for votes, with Primary Users having more(in event of a tied vote) 
+ * Event Cards ability to update the number of families attending
+ * Add a chat ability on each Suggested Event
+ * Incorporate a child age range
+ * Integration with Google Calendar
+
+## Credits
+
+Overall site pages and card designs - Maria Otero - m.jesuotero@gmail.com
+Front-end Structure/design and Google API implementation - Sophie Obayashi - sophieobayashi@gmail.com
+Backend + HTML routing and development, 
+Database design, and authentication - Jessie La    - laethaka@gmail.com
+                                    - Bryan Albano - albanobryan@yahoo.com
+                                    
+## Maintained and Updated By
+
+
+
