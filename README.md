@@ -20,4 +20,4 @@ Ohana is an app targetted to families that would like to organize family time ev
 
 Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
 
-<a href="https://imgflip.com/gif/2cf04l"><img src="https://i.imgflip.com/2cf04l.gif" title="made at imgflip.com"/></a>
+<a href="https://imgflip.com/gif/2cf0ly"><img src="https://i.imgflip.com/2cf0ly.gif" title="made at imgflip.com"/></a>
