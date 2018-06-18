@@ -11,7 +11,7 @@ Ohana is an app targetted for families that would like to organize family time/g
 ## Getting Started
 
   * Feel free to visit a deployed version at https://ohana-families.herokuapp.com/ ,
-   * If you do not feel like creating an account and want to just test it out, feel free to log in with our test account:
+    * If you do not feel like creating an account and want to just test it out, feel free to log in with our test account:
      * email: test@test.com
      * password : 12345
   
