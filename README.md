@@ -78,7 +78,6 @@ Front-end Structure/design and Google API implementation - Sophie Obayashi - sop
 Backend + HTML routing and development,
 
 Database design, and authentication - Jessie La    - laethaka@gmail.com
-
                                     - Bryan Albano - albanobryan@yahoo.com
                                     
 ## Maintained and Updated By
