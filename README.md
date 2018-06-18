@@ -19,13 +19,10 @@ Ohana is an app targetted to families that would like to organize family time ev
     * Navigate to the root folder and type "node server.js" to initiate a local server connection
     * In a browser window, navigate to "localhost:3344"
 
-### Tech
+## Tech
 
- ### Dependecies
 
-<a href="https://imgflip.com/i/2cf1mu"><img src="https://i.imgflip.com/2cf1mu.jpg" title="made at imgflip.com"/></a>
-
-### How does it work?
+## How does it work?
 
 After creating a Family, account and signing in, you will be directed to your Family Dashboard page.  At this point, click on the "+" field to create a new event suggestion:
 
