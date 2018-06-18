@@ -14,13 +14,16 @@ Ohana is an app targetted to families that would like to organize family time ev
   
      #### _or_
   
-  * After cloning, simply type "npm install" to download the required dependencies
+  * After cloning from gihub
+    * type "npm install" to download the required dependencies(listed below)
     * Navigate to the root folder and type "node server.js" to initiate a local server connection
     * In a browser window, navigate to "localhost:3344"
 
 ### Tech
 
+ ### Dependecies
 
+<a href="https://imgflip.com/i/2cf1mu"><img src="https://i.imgflip.com/2cf1mu.jpg" title="made at imgflip.com"/></a>
 
 ### How does it work?
 
