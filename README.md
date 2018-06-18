@@ -75,8 +75,10 @@ Overall site pages and card designs - Maria Otero - m.jesuotero@gmail.com
 
 Front-end Structure/design and Google API implementation - Sophie Obayashi - sophieobayashi@gmail.com
 
-Backend + HTML routing and development, 
+Backend + HTML routing and development,
+
 Database design, and authentication - Jessie La    - laethaka@gmail.com
+
                                     - Bryan Albano - albanobryan@yahoo.com
                                     
 ## Maintained and Updated By
