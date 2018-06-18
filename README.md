@@ -31,7 +31,7 @@ Ohana is an app targetted for families that would like to organize family time/g
 
 After creating a Family, account and signing in, you will be directed to your Family Dashboard page.  At this point, click on the "+" field to create a new event suggestion:
 
-href="https://imgflip.com/gif/2cf0ly"><img src="https://i.imgflip.com/2cf0ly.gif" title="made at imgflip.com"/>
+<a href="https://imgflip.com/gif/2cf0ly"><img src="https://i.imgflip.com/2cf0ly.gif" title="made at imgflip.com"/><a>
 
 From there you can input the details of the event you wish to add as a suggestion.
 For convenience, a calendar drop down and location auto-fill option(using google api) is available:
