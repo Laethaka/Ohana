@@ -1,6 +1,6 @@
 # Ohana
 
-![N|Solid](./public/assets/images/logo_ohana 2.svg)
+<a href="https://imgflip.com/i/2cf0rr"><img src="https://i.imgflip.com/2cf0rr.jpg" title="made at imgflip.com"/></a>
 
 Ohana is an app targetted to families that would like to organize family time events. It allows the creation of a family event by date and time, suggestions of things to do by all of those in the family, and provide a methood of family members to vote on any and all suggestions.  Not sure what to suggest?  No problem.  Our Public Dashboard of other family events can be used to generate ideas for your family event, or you can even grab that specific event and make it a suggestion for yours.  If you wish, you can even contact the original family and inquire about joining them.  The main purpose is to give a voice to all family or friend members on how they would like to spend time together.  Ohana will help achieve that and make sure that no one is left behind!!!
 
