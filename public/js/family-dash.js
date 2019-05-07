@@ -4,6 +4,7 @@ $( document ).ready(function() {
 
     function populateCards() {
         console.log('hi there');
+        console.log('more changes');
 
         $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
             userFamId = data.FamilyId;
