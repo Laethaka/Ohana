@@ -3,6 +3,8 @@ $( document ).ready(function() {
     var userFamId;
 
     function populateCards() {
+        console.log('hi there');
+
         $.get('/api/user_data',function(data) {//GETTING USER'S FAMILY ID
             userFamId = data.FamilyId;
 
